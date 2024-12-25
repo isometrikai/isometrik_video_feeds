@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "BA709A05-2A4F-45A2-89B0-3602A7809330"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31853862-C473-464F-9A50-18190A9747C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Isometrik_Video_Feeds/App/UI Layer/Reels/Views/SOReelsCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "setUpCell(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "31853862-C473-464F-9A50-18190A9747C2 - c91fe901e4958f18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Isometrik_Video_Feeds.SOReelsCollectionViewCell.setUpCell(data: Isometrik_Video_Feeds.SocialiseReels) -&gt; ()"
+                  moduleName = "Isometrik_Video_Feeds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/3embed/Desktop/Isometrik_Video_Feeds/Isometrik_Video_Feeds/App/UI%20Layer/Reels/Views/SOReelsCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "788">
+               </Location>
+               <Location
+                  uuid = "31853862-C473-464F-9A50-18190A9747C2 - c91fe901e4958f18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Isometrik_Video_Feeds.SOReelsCollectionViewCell.setUpCell(data: Isometrik_Video_Feeds.SocialiseReels) -&gt; ()"
+                  moduleName = "Isometrik_Video_Feeds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/3embed/Desktop/Isometrik_Video_Feeds/Isometrik_Video_Feeds/App/UI%20Layer/Reels/Views/SOReelsCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "872">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D9D7913-DBBB-4DDE-A016-634F024F6EEB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Isometrik_Video_Feeds/App/UI Layer/ISMReels/ISMReels+IGListKit/NetworkLayer/Model/PostFeeds.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "init(id:postViewsCount:title:imageUrl1:thumbnailUrl1:mediaType1:userID:createdOn:timeStamp:distinctViews:imageUrl1Width:imageUrl1Height:likesCount:postStatus:shareCount:commentCount:cloudinaryPublicID:userName:firstName:lastName:fullName:fullNameWithSpace:profilepic:profileCoverImage:categoryID:categoryName:categoryURL:musicID:musicData:location:place:placeID:orientation:isStar:trendingScore:allowDownload:allowComment:allowDuet:cityForPost:latForPost:longForPost:locationForPost:isPrivate:isPaid:postAmount:subscriptionAmount:tipsAmount:hashTags:followStatus:postID:liked:isPurchased:isKYCApproved:isBookMarked:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
