@@ -31,7 +31,7 @@ class FeedsKingfisherManager {
                     switch result {
                     case .success:
                        //Image loaded successfully
-                        break
+                        break  
                     case .failure(let error):
                         print("Failed to load image: \(error.localizedDescription)")
                     }
