@@ -11,7 +11,7 @@ extension ISMReelsViewController {
     // MARK: - Setup Methods
     
      func fetchData() {
-        viewModel.fetchFeedsContent { [weak self] in
+        viewModel.fetchReelsContent { [weak self] in
             guard let self = self else { return }
             self.dataSource.updateFeeds(reels: self.viewModel.reels)
             self.adapter.performUpdates(animated: true)

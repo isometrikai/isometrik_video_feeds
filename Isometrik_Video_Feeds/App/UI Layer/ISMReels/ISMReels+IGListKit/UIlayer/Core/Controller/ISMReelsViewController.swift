@@ -39,7 +39,7 @@ class ISMReelsViewController: UIViewController {
     
     // MARK: - ViewModel
     
-    let viewModel = ReelsViewModel()
+    let viewModel = ISMReelsViewModel()
     
     // MARK: - IGListKit Declarations
     

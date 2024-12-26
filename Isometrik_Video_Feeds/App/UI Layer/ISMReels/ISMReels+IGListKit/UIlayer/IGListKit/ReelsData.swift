@@ -97,7 +97,7 @@ let jsonString = """
       "commentCount": 3,
       "cloudinary_public_id": "",
       "userName": "manisha",
-      "firstName": "Manisha",
+      "firstName": "Navpreet Kaur",
       "lastName": "M",
       "fullName": "ManishaM",
       "fullNameWithSpace": "Manisha M",

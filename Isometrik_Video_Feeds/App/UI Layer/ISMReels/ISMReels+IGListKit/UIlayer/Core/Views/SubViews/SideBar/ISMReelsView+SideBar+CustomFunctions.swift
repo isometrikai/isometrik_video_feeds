@@ -1,48 +1,15 @@
 //
-//  ReelsView+SideBar.swift
-//  ISM
+//  ISMReelsView+SideBar+CustomFunctions.swift
+//  Isometrik_Video_Feeds
 //
-//  Created by 3embed on 24/12/24.
+//  Created by 3embed on 26/12/24.
 //
 
 import Foundation
 import UIKit
 
-class ReelsSideBarSocialView : UIView{
-    //vstack
-    var buttonsStackView : UIStackView = UIStackView()
-    //mute
-    var muteButton = UIButton()
-    //like + count
-    var likesButton = UIButton()
-    var likesCount = UILabel()
-    //views + count
-    var viewsButton = UIButton()
-    var viewsCount = UILabel()
-    //comment + count
-    var commentsButton = UIButton()
-    var commentsCount = UILabel()
-    //share
-    var shareButton = UIButton()
-    //more
-    var moreButton = UIButton()
-    
-    //MARK: -Declarations
-    var socialButtons : [ISMReelsSocialButtons] = [.mute , .like , .views , .comment , .share , .more]
-    let width = 30.0
-    let labelwidth = 20.0
-    // MARK: - Initializer
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setUpUI()
-        setUpConstraints()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-  
+extension ISMReelsSideBarSocialView{
+    /// Styles the Side Bar with necessary Buttons
     func setUpUI(){
         buttonsStackView.axis = .vertical
         buttonsStackView.spacing = 10
@@ -66,7 +33,7 @@ class ReelsSideBarSocialView : UIView{
             }
         }
     }
-    
+    /// Styles the Mute Button
     func setupMuteButton(){
         muteButton.translatesAutoresizingMaskIntoConstraints = false
         muteButton.setImage(UIImage(resource: .mute), for: .normal)
@@ -74,7 +41,7 @@ class ReelsSideBarSocialView : UIView{
         muteButton.imageView?.contentMode = .scaleAspectFit
         buttonsStackView.addArrangedSubview(muteButton)
     }
-    
+    /// Styles the like button and Count Label
     func setupLikesButtonAndLikesCount(){
         let vStack = UIStackView()
         vStack.axis = .vertical
@@ -84,7 +51,7 @@ class ReelsSideBarSocialView : UIView{
         likesButton.setImage(UIImage(resource: .like), for: .normal)
         likesButton.imageView?.contentMode = .scaleAspectFit
         likesButton.addTarget(self, action: #selector(likeTapped), for: .touchUpInside)
-
+        
         likesCount.translatesAutoresizingMaskIntoConstraints = false
         likesCount.text = "0"
         likesCount.textColor = .white
@@ -95,7 +62,7 @@ class ReelsSideBarSocialView : UIView{
         buttonsStackView.addArrangedSubview(vStack)
         
     }
-    
+    /// Styles the views Button And Views label
     func setupViewsButtonAndViewsCount(){
         let vStack = UIStackView()
         vStack.axis = .vertical
@@ -105,7 +72,7 @@ class ReelsSideBarSocialView : UIView{
         viewsButton.setImage(UIImage(resource: .views), for: .normal)
         viewsButton.imageView?.contentMode = .scaleAspectFit
         viewsButton.addTarget(self, action: #selector(viewsTapped), for: .touchUpInside)
-
+        
         viewsCount.translatesAutoresizingMaskIntoConstraints = false
         viewsCount.text = "0"
         viewsCount.textColor = .white
@@ -116,7 +83,7 @@ class ReelsSideBarSocialView : UIView{
         buttonsStackView.addArrangedSubview(vStack)
         
     }
-    
+    /// Styles the comments Button and Comments Label
     func setupCommentsButtonAndCommentsCount(){
         let vStack = UIStackView()
         vStack.axis = .vertical
@@ -126,7 +93,7 @@ class ReelsSideBarSocialView : UIView{
         commentsButton.setImage(UIImage(resource: .comments), for: .normal)
         commentsButton.imageView?.contentMode = .scaleAspectFit
         commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
-
+        
         commentsCount.translatesAutoresizingMaskIntoConstraints = false
         commentsCount.text = "0"
         commentsCount.textColor = .white
@@ -137,7 +104,7 @@ class ReelsSideBarSocialView : UIView{
         buttonsStackView.addArrangedSubview(vStack)
         
     }
-    
+    /// Styles the Share Button
     func setupShareButton(){
         shareButton.translatesAutoresizingMaskIntoConstraints = false
         shareButton.setImage(UIImage(resource: .share), for: .normal)
@@ -145,7 +112,7 @@ class ReelsSideBarSocialView : UIView{
         shareButton.imageView?.contentMode = .scaleAspectFit
         buttonsStackView.addArrangedSubview(shareButton)
     }
-    
+    /// Styles the More button
     func setupMoreutton(){
         moreButton.translatesAutoresizingMaskIntoConstraints = false
         moreButton.setImage(UIImage(resource: .more), for: .normal)
@@ -153,63 +120,34 @@ class ReelsSideBarSocialView : UIView{
         moreButton.imageView?.contentMode = .scaleAspectFit
         buttonsStackView.addArrangedSubview(moreButton)
     }
-    
+    /// Set up constraints for the side bar vIew
     func setUpConstraints(){
         let constraints : [NSLayoutConstraint] = [
-            likesButton.heightAnchor.constraint(equalToConstant: width),
-            likesButton.widthAnchor.constraint(equalToConstant: width),
-            likesCount.heightAnchor.constraint(equalToConstant: labelwidth),
+            likesButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+            likesButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+            likesCount.heightAnchor.constraint(equalToConstant: labelHeight),
             
-            viewsButton.heightAnchor.constraint(equalToConstant: width),
-            viewsButton.widthAnchor.constraint(equalToConstant: width),
-            viewsCount.heightAnchor.constraint(equalToConstant: labelwidth),
+            viewsButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+            viewsButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+            viewsCount.heightAnchor.constraint(equalToConstant: labelHeight),
             
-            commentsButton.heightAnchor.constraint(equalToConstant: width),
-            commentsButton.widthAnchor.constraint(equalToConstant: width),
-            commentsCount.heightAnchor.constraint(equalToConstant: labelwidth),
+            commentsButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+            commentsButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+            commentsCount.heightAnchor.constraint(equalToConstant: labelHeight),
             
-            shareButton.heightAnchor.constraint(equalToConstant: width),
-            shareButton.widthAnchor.constraint(equalToConstant: width),
-           
-            moreButton.heightAnchor.constraint(equalToConstant: width),
-            moreButton.widthAnchor.constraint(equalToConstant: width),
-          
-            muteButton.heightAnchor.constraint(equalToConstant: width),
-            muteButton.widthAnchor.constraint(equalToConstant: width),
-
+            shareButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+            shareButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+            
+            moreButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+            moreButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+            
+            muteButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+            muteButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+            
             buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
             buttonsStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             buttonsStackView.widthAnchor.constraint(equalToConstant: 50),
-            
-            
         ]
         NSLayoutConstraint.activate(constraints)
     }
-    
-    
-    
-    @objc func muteTapped(){
-        print("mute Tapped")
-    }
-    
-    @objc func likeTapped(){
-        print("like Tapped")
-    }
-    
-    @objc func viewsTapped(){
-        print("Views Tapped")
-    }
-    
-    @objc func commentsTapped(){
-        print("Comments Tapped")
-    }
-    
-    @objc func shareTapped(){
-        print("Share Tapped")
-    }
-
-    @objc func moreTapped(){
-        print("More Tapped")
-    }
-    
 }
