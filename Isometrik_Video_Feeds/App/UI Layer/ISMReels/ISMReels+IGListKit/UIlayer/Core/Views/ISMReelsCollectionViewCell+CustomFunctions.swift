@@ -30,8 +30,12 @@ extension ISMReelsCollectionViewCell{
             switch type{
             case .image:
                 FeedsKingfisherManager.shared.setImage(image: mediaUrl, imageView: reelsImageView)
+                playPauseView.isHidden = true
+                socialView.muteButton.isHidden = true
             case .video:
                 configureVideo(videoUrl: mediaUrl)
+                playPauseView.isHidden = false
+                socialView.muteButton.isHidden = false
             }
         }
     }
@@ -52,37 +56,57 @@ extension ISMReelsCollectionViewCell{
     }
     /// Sets the styling of side bar view on the reels cell
     func configureSocialView() {
-        reelsImageView.addSubview(socialView)
         socialView.translatesAutoresizingMaskIntoConstraints = false
+        reelsImageView.addSubview(socialView)
+        
     }
     /// Sets the styling of bottom description view on the reels cell
     func configureBottomView() {
-        reelsImageView.addSubview(bottomView)
         bottomView.translatesAutoresizingMaskIntoConstraints = false
+        reelsImageView.addSubview(bottomView)
+    }
+    /// Configure the play pause view
+    func configurePlayPauseView() {
+        playPauseView.translatesAutoresizingMaskIntoConstraints = false
+        playPauseView.delegate = self
+        reelsImageView.addSubview(playPauseView)
+        
     }
     /// Configures the constarints of the reels cell
     func configureConstraints() {
         NSLayoutConstraint.activate([
+            // Constraints for reelsBackgroundView
             reelsBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             reelsBackgroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             reelsBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor),
             reelsBackgroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
+            // Constraints for reelsImageView
             reelsImageView.leadingAnchor.constraint(equalTo: reelsBackgroundView.leadingAnchor),
             reelsImageView.trailingAnchor.constraint(equalTo: reelsBackgroundView.trailingAnchor),
             reelsImageView.topAnchor.constraint(equalTo: reelsBackgroundView.topAnchor),
             reelsImageView.bottomAnchor.constraint(equalTo: reelsBackgroundView.bottomAnchor),
             
+            // Constraints for socialView
             socialView.trailingAnchor.constraint(equalTo: reelsImageView.trailingAnchor),
             socialView.bottomAnchor.constraint(equalTo: reelsImageView.bottomAnchor),
             socialView.widthAnchor.constraint(equalTo: reelsImageView.widthAnchor, multiplier: 0.2),
             socialView.heightAnchor.constraint(equalTo: reelsImageView.heightAnchor, multiplier: 1.0),
             
+            // Constraints for bottomView
             bottomView.trailingAnchor.constraint(equalTo: socialView.leadingAnchor),
             bottomView.bottomAnchor.constraint(equalTo: reelsImageView.bottomAnchor),
             bottomView.leadingAnchor.constraint(equalTo: reelsImageView.leadingAnchor),
+            
+            // Center the playPauseButton in the reelsImageView
+            playPauseView.centerXAnchor.constraint(equalTo: reelsImageView.centerXAnchor),
+            playPauseView.centerYAnchor.constraint(equalTo: reelsImageView.centerYAnchor),
+            playPauseView.heightAnchor.constraint(equalToConstant: 50),
+            playPauseView.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
+
+
     /// Sets the player layer on the cell and plays the video
     /// - Parameter videoUrl: takes url that is in .mp4 format for playing the video
     func configureVideo(videoUrl: String) {

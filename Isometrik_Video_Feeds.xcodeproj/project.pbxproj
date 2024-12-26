@@ -28,6 +28,7 @@
 		6B77A6822D1D5F1E00C0C6EF /* ISMReelsView+SideBar+CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6582D1D5F1E00C0C6EF /* ISMReelsView+SideBar+CustomFunctions.swift */; };
 		6B77A6832D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A64F2D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift */; };
 		6B77A6842D1D5F1E00C0C6EF /* PostFeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6482D1D5F1E00C0C6EF /* PostFeeds.swift */; };
+		6B77A68A2D1D6BF700C0C6EF /* PlayPauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6892D1D6BF700C0C6EF /* PlayPauseView.swift */; };
 		6BAAACE52D1AC9FB008E698D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAAACE42D1AC9FB008E698D /* AppDelegate.swift */; };
 		6BAAACE72D1AC9FB008E698D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAAACE62D1AC9FB008E698D /* SceneDelegate.swift */; };
 		6BAAACE92D1AC9FB008E698D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAAACE82D1AC9FB008E698D /* ViewController.swift */; };
@@ -67,6 +68,7 @@
 		6B77A6692D1D5F1E00C0C6EF /* ISMReelsEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsEnums.swift; sourceTree = "<group>"; };
 		6B77A66B2D1D5F1E00C0C6EF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		6B77A66C2D1D5F1E00C0C6EF /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		6B77A6892D1D6BF700C0C6EF /* PlayPauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseView.swift; sourceTree = "<group>"; };
 		6BAAACE12D1AC9FB008E698D /* Isometrik_Video_Feeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Isometrik_Video_Feeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BAAACE42D1AC9FB008E698D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BAAACE62D1AC9FB008E698D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		6B77A65A2D1D5F1E00C0C6EF /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				6B77A6862D1D6BB700C0C6EF /* MediaControlButtons */,
 				6B77A6552D1D5F1E00C0C6EF /* BottomBar */,
 				6B77A6592D1D5F1E00C0C6EF /* SideBar */,
 			);
@@ -267,6 +270,14 @@
 				6B77A66E2D1D5F1E00C0C6EF /* ISMReelsHelper */,
 			);
 			path = ISMReels;
+			sourceTree = "<group>";
+		};
+		6B77A6862D1D6BB700C0C6EF /* MediaControlButtons */ = {
+			isa = PBXGroup;
+			children = (
+				6B77A6892D1D6BF700C0C6EF /* PlayPauseView.swift */,
+			);
+			path = MediaControlButtons;
 			sourceTree = "<group>";
 		};
 		6BAAACD82D1AC9FB008E698D = {
@@ -465,6 +476,7 @@
 				6B77A6832D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift in Sources */,
 				6B77A6842D1D5F1E00C0C6EF /* PostFeeds.swift in Sources */,
 				6BAAACE92D1AC9FB008E698D /* ViewController.swift in Sources */,
+				6B77A68A2D1D6BF700C0C6EF /* PlayPauseView.swift in Sources */,
 				6BAAAD442D1C0DC4008E698D /* KingfisherManager.swift in Sources */,
 				6BAAAD2A2D1ACA4F008E698D /* FeedsViewController.swift in Sources */,
 				6BAAACE52D1AC9FB008E698D /* AppDelegate.swift in Sources */,

@@ -11,7 +11,7 @@ import AVFoundation
 class ISMReelsCollectionViewCell: UICollectionViewCell {
     //MARK: - Outlets
     
-    ///  conatiner view of the reels cell
+    /// container view of the reels cell
     var reelsBackgroundView: UIView!
     /// imageView of the reels cell
     var reelsImageView: UIImageView!
@@ -22,6 +22,8 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
     let socialView = ISMReelsSideBarSocialView()
     /// description view at the bottom of the reels cell
     let bottomView = ISMReelsBottomView()
+    /// Manages the playing and pausing of Reels
+    let playPauseView = ISMReelsPlayPauseView()
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
     
@@ -52,7 +54,16 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
         //set up the remaining UI over the image or video
         configureSocialView()
         configureBottomView()
+        configurePlayPauseView()
         configureConstraints()
+       
     }
 }
 
+extension ISMReelsCollectionViewCell : ISMReelsViewDelegate{
+    func reelsViewDidPlayPauseTapped(isPlaying: Bool) {
+        isPlaying ? stopVideo() : playVideo()
+    }
+    
+    
+}
