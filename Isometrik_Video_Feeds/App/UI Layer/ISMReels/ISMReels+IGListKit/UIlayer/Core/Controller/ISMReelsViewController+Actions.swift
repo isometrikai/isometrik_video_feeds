@@ -38,4 +38,9 @@ extension ISMReelsViewController{
         
         //call exclusive api
     }
+    /// On clicking Coins button on the header of the Reels page
+    @objc func coinsButtonTapped(){
+      //open coins button
+        print("Coin tapped")
+    }
 }

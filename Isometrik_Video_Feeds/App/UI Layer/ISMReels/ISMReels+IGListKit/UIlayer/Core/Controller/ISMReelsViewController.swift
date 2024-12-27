@@ -20,6 +20,10 @@ class ISMReelsViewController: UIViewController {
     var trendingButton: UIButton!
     var exclusiveButton: UIButton!
     var holderStack: UIStackView!
+    var coinsView : UIView!
+    var coinsButton : UIButton!
+    var coinsLabel : UILabel!
+    var coinImage : UIImageView!
     var headerView: UIView!
     
     let reelsCollectionView: UICollectionView = {

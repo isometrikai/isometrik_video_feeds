@@ -59,11 +59,45 @@ extension ISMReelsViewController{
     func configureHeaderView(){
         configureProfileView()
         configureCategoryView()
+        configureCoinsView()
         headerView = UIView()
         headerView.defaultViewStyle()
         headerView.addSubview(profileButton)
         headerView.addSubview(holderStack)
+        headerView.addSubview(coinsView)
         view.addSubview(headerView)
+    }
+    /// configures the styling  of coins view
+    func configureCoinsView(){
+        coinsView = UIView()
+        coinsView.defaultViewStyle()
+        configureCoinsImageView()
+        configureCoinLabel()
+        configureCoinsButton()
+    }
+    /// configure coins image styling
+    func configureCoinsImageView(){
+        coinImage = UIImageView()
+        coinImage.defaultImageViewStyle()
+        coinImage.image = UIImage(resource: .iconCoin)
+        coinsView.addSubview(coinImage)
+    }
+    /// Configure Coins Label is a method to style the label showing coins value
+    func configureCoinLabel(){
+        coinsLabel = UILabel()
+        coinsLabel.defaultViewStyle()
+        coinsLabel.textColor = .white
+        coinsLabel.text = "0"
+        coinsLabel.textAlignment = .center
+        coinsLabel.font = .systemFont(ofSize: 15 , weight: .semibold)
+        coinsView.addSubview(coinsLabel)
+    }
+    /// Button present on the top of he coins View on the header of the reels page
+    func configureCoinsButton(){
+        coinsButton = UIButton()
+        coinsButton.translatesAutoresizingMaskIntoConstraints = false
+        coinsButton.addTarget(self, action: #selector(coinsButtonTapped), for: .touchUpInside)
+        coinsView.addSubview(coinsButton)
     }
     /// Overall constrainst of the ISMReelsViewController (CollectionView and Header View ) are getting set here
     func configureConstraints(){
@@ -82,10 +116,30 @@ extension ISMReelsViewController{
             holderStack.heightAnchor.constraint(equalToConstant: 30),
             holderStack.centerYAnchor.constraint(equalTo: profileButton.centerYAnchor),
             trendingButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            holderStack.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
             //ProfileView
             profileButton.leadingAnchor.constraint(equalTo: headerView.leadingAnchor , constant: 10),
             profileButton.widthAnchor.constraint(equalToConstant: 30),
-            profileButton.heightAnchor.constraint(equalToConstant: 30)
+            profileButton.heightAnchor.constraint(equalToConstant: 30),
+            //Coin Image
+            coinImage.heightAnchor.constraint(equalToConstant: 25),
+            coinImage.widthAnchor.constraint(equalToConstant: 25),
+            coinImage.centerXAnchor.constraint(equalTo: coinsView.centerXAnchor),
+            coinImage.topAnchor.constraint(equalTo: coinsView.topAnchor , constant: 5),
+            //CoinsLabel
+            coinsLabel.centerXAnchor.constraint(equalTo: coinsView.centerXAnchor),
+            coinsLabel.topAnchor.constraint(equalTo: coinImage.bottomAnchor, constant: 0),
+            coinsLabel.bottomAnchor.constraint(equalTo: coinsView.bottomAnchor, constant: 0),
+            //Coins View
+            coinsView.leadingAnchor.constraint(equalTo: holderStack.trailingAnchor),
+            coinsView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor , constant: 0),
+            coinsView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor , constant: 0),
+            coinsView.topAnchor.constraint(equalTo: headerView.topAnchor , constant: 0),
+            //Coins Button
+            coinsButton.leadingAnchor.constraint(equalTo: coinsView.leadingAnchor),
+            coinsButton.trailingAnchor.constraint(equalTo: coinsView.trailingAnchor),
+            coinsButton.topAnchor.constraint(equalTo: coinsView.topAnchor),
+            coinsButton.bottomAnchor.constraint(equalTo: coinsView.bottomAnchor),
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -118,7 +172,7 @@ extension ISMReelsViewController{
     func configureCategoryButtons(button : UIButton,title : String , selector : Selector ,backgroundColor : UIColor) {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.layer.cornerRadius = 8
         button.backgroundColor = backgroundColor
         button.setTitleColor(.white, for: .normal)

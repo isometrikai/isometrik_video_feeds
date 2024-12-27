@@ -20,21 +20,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D9D7913-DBBB-4DDE-A016-634F024F6EEB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Isometrik_Video_Feeds/App/UI Layer/ISMReels/ISMReels+IGListKit/NetworkLayer/Model/PostFeeds.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "init(id:postViewsCount:title:imageUrl1:thumbnailUrl1:mediaType1:userID:createdOn:timeStamp:distinctViews:imageUrl1Width:imageUrl1Height:likesCount:postStatus:shareCount:commentCount:cloudinaryPublicID:userName:firstName:lastName:fullName:fullNameWithSpace:profilepic:profileCoverImage:categoryID:categoryName:categoryURL:musicID:musicData:location:place:placeID:orientation:isStar:trendingScore:allowDownload:allowComment:allowDuet:cityForPost:latForPost:longForPost:locationForPost:isPrivate:isPaid:postAmount:subscriptionAmount:tipsAmount:hashTags:followStatus:postID:liked:isPurchased:isKYCApproved:isBookMarked:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

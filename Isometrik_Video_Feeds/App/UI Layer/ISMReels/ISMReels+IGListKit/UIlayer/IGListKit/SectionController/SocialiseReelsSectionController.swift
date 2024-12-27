@@ -7,7 +7,7 @@
 
 import Foundation
 import IGListKit
-import SwiftUI
+
 class ISMReelsSectionController : ListSectionController , CompositionLayoutCapable{
     private var currentPostData : ISMReels?
     override func didUpdate(to object: Any) {
