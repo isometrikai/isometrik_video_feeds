@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B28A54F2D1E834A008E0C5D /* ISMReelsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A54D2D1E834A008E0C5D /* ISMReelsUtility.swift */; };
 		6B77A6702D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6502D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift */; };
 		6B77A6712D1D5F1E00C0C6EF /* ISMReelsView+BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6542D1D5F1E00C0C6EF /* ISMReelsView+BottomBar.swift */; };
 		6B77A6722D1D5F1E00C0C6EF /* ISMReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A64D2D1D5F1E00C0C6EF /* ISMReelsViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B28A54D2D1E834A008E0C5D /* ISMReelsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsUtility.swift; sourceTree = "<group>"; };
 		6B77A6482D1D5F1E00C0C6EF /* PostFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeeds.swift; sourceTree = "<group>"; };
 		6B77A64A2D1D5F1E00C0C6EF /* ISMReelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsViewModel.swift; sourceTree = "<group>"; };
 		6B77A64D2D1D5F1E00C0C6EF /* ISMReelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B28A54E2D1E834A008E0C5D /* ReelsHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6B28A54D2D1E834A008E0C5D /* ISMReelsUtility.swift */,
+			);
+			path = ReelsHelper;
+			sourceTree = "<group>";
+		};
 		6B77A6492D1D5F1E00C0C6EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +267,7 @@
 		6B77A66E2D1D5F1E00C0C6EF /* ISMReelsHelper */ = {
 			isa = PBXGroup;
 			children = (
+				6B28A54E2D1E834A008E0C5D /* ReelsHelper */,
 				6B77A66A2D1D5F1E00C0C6EF /* Enums */,
 				6B77A66D2D1D5F1E00C0C6EF /* Extensions */,
 			);
@@ -468,6 +479,7 @@
 				6B77A67B2D1D5F1E00C0C6EF /* ISMReelsView+SideBar+Actions.swift in Sources */,
 				6B77A67C2D1D5F1E00C0C6EF /* ISMReelsViewModel.swift in Sources */,
 				6B77A67D2D1D5F1E00C0C6EF /* ISMReelsCollectionViewCell+CustomFunctions.swift in Sources */,
+				6B28A54F2D1E834A008E0C5D /* ISMReelsUtility.swift in Sources */,
 				6B77A67E2D1D5F1E00C0C6EF /* SocaliseReels.swift in Sources */,
 				6B77A67F2D1D5F1E00C0C6EF /* UIImageView.swift in Sources */,
 				6B77A6802D1D5F1E00C0C6EF /* ISMReelsView+SideBar.swift in Sources */,

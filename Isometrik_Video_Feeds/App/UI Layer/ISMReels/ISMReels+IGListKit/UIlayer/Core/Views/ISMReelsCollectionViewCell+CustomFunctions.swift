@@ -12,10 +12,16 @@ import AVFoundation
 extension ISMReelsCollectionViewCell{
     //MARK: - Custom Functions
     /// Default setup of the cell requires the backgroundView and the imageView to load . In case there is no image a dummy Image would be set
-   func configureUI() {
-       configureReelsBackgroundView()
-       configureImageView()
-   }
+    func configureUI() {
+        addObservers()
+        configureReelsBackgroundView()
+        configureImageView()
+    }
+    /// Add Observers for Reels Cell
+    func addObservers(){
+        NotificationCenter.default.addObserver(self, selector: #selector(stopVideo), name: .stopVideoPlayback, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(playVideo), name: .playVideoPlayback, object: nil)
+    }
     /// Passing url on the basis of if the  url is for image or video
     /// - Parameters:
     ///   - url: takes url of the image or video
@@ -105,8 +111,8 @@ extension ISMReelsCollectionViewCell{
             playPauseView.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
-
-
+    
+    
     /// Sets the player layer on the cell and plays the video
     /// - Parameter videoUrl: takes url that is in .mp4 format for playing the video
     func configureVideo(videoUrl: String) {
@@ -116,33 +122,33 @@ extension ISMReelsCollectionViewCell{
             return
         }
         // Remove any existing player layer from the view
-            if let existingLayer = playerLayer {
-                existingLayer.removeFromSuperlayer()
-            }
+        if let existingLayer = playerLayer {
+            existingLayer.removeFromSuperlayer()
+        }
         
         // Initialize the AVPlayer with the video URL
         player = AVPlayer(url: videoURL)
-      
-
+        
+        
         // Initialize the AVPlayerLayer and set its properties
         playerLayer = AVPlayerLayer(player: player)
         playerLayer?.videoGravity = .resizeAspect // Set the video gravity
-
+        
         // Add the player layer to the view
         if let playerLayer = playerLayer {
             playerLayer.frame = CGRect(x: 0, y: 10, width: self.contentView.bounds.width, height: self.contentView.bounds.height) // Ensure the player layer matches the backgroundView's bounds
             reelsImageView.layer.addSublayer(playerLayer)
         }
-
+        
         // Start playing the video
         player?.play()
     }
     /// Plays the video
-    func playVideo() {
+    @objc func playVideo() {
         player?.play()
     }
     /// Stops the video from playing
-    func stopVideo() {
+    @objc func stopVideo() {
         player?.pause()
     }
 }

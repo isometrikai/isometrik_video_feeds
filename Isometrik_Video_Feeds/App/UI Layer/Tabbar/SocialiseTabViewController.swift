@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarViewController: UITabBarController , UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTabBar()
+        self.delegate = self
     }
     
     func setUpTabBar() {
@@ -32,5 +33,21 @@ class TabBarViewController: UITabBarController {
         tabBar.tintColor = .systemBlue
         tabBar.unselectedItemTintColor = .gray
         tabBar.backgroundColor = .white
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        setTabSelectionPlaybackForReels(viewController: viewController)
+    }
+    
+    func setTabSelectionPlaybackForReels(viewController : UIViewController){
+        if self.viewControllers?.first(where: { $0 is ISMReelsViewController }) is ISMReelsViewController {
+            if viewController is ISMReelsViewController {
+                // Notify ISMReelsViewController to play video
+                ISMReelsUtility.postPlayVideoPlayback()
+            } else {
+                // Notify ISMReelsViewController to stop video
+                ISMReelsUtility.postStopVideoPlayback()
+            }
+        }
     }
 }
