@@ -21,11 +21,12 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
     //MARK: - Declarations
     
     /// side bar social buttons of the reels cell
-    let socialView = ISMReelsSideBarSocialView()
+    var socialView = ISMReelsSideBarSocialView()
     /// description view at the bottom of the reels cell
-    let bottomView = ISMReelsBottomView()
+    var bottomView = ISMReelsBottomView()
     /// Manages the playing and pausing of Reels
-    let playPauseView = ISMReelsPlayPauseView()
+    var playPauseView = ISMReelsPlayPauseView()
+    var blurView = ISMReelsBlurView()
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
     
@@ -58,6 +59,12 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
         configureBottomView()
         configurePlayPauseView()
         configureConstraints()
+        if data.isPaid{
+            configureBlurView()
+            addBlurViewConstraints()
+        }
+       
+       
        
     }
 }

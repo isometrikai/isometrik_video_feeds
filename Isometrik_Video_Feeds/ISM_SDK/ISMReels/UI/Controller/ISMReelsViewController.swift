@@ -50,7 +50,7 @@ class ISMReelsViewController: UIViewController {
     let dataSource = ISMReelsDataSource()
     
     lazy var adapter: ListAdapter = {
-        let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 1)
+        let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
         adapter.dataSource = dataSource
         adapter.collectionView = reelsCollectionView
         return adapter

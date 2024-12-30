@@ -13,11 +13,13 @@ class ISMReels : ListDiffable{
     private(set) var name : String
     private(set) var ImageUrl : String
     private(set) var mediaType : Int
+    private(set) var isPaid : Bool
     
-    init(name: String , ImageUrl : String , mediaType : Int) {
+    init(name: String , ImageUrl : String , mediaType : Int , ispaid : Bool = false ) {
         self.name = name
         self.ImageUrl = ImageUrl
         self.mediaType = mediaType
+        self.isPaid = ispaid
     }
     
     func diffIdentifier() -> NSObjectProtocol {

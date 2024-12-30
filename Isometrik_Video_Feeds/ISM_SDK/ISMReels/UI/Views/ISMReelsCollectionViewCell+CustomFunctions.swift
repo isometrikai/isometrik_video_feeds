@@ -95,6 +95,12 @@ extension ISMReelsCollectionViewCell{
         reelsImageView.addSubview(playPauseView)
         
     }
+    func configureBlurView() {
+            blurView.translatesAutoresizingMaskIntoConstraints = false
+            //        blurView.backgroundColor = .systemPink
+            reelsImageView.addSubview(blurView)
+    }
+    
     /// Configures the constarints of the reels cell
     func configureConstraints() {
         NSLayoutConstraint.activate([
@@ -125,15 +131,26 @@ extension ISMReelsCollectionViewCell{
             playPauseView.centerXAnchor.constraint(equalTo: reelsImageView.centerXAnchor),
             playPauseView.centerYAnchor.constraint(equalTo: reelsImageView.centerYAnchor),
             playPauseView.heightAnchor.constraint(equalToConstant: 50),
-            playPauseView.widthAnchor.constraint(equalToConstant: 50)
+            playPauseView.widthAnchor.constraint(equalToConstant: 50),
         ])
     }
+    
+    func addBlurViewConstraints() {
+        NSLayoutConstraint.activate([
+        //Blur View
+        blurView.topAnchor.constraint(equalTo: reelsImageView.topAnchor),
+        blurView.bottomAnchor.constraint(equalTo: reelsImageView.bottomAnchor),
+        blurView.leadingAnchor.constraint(equalTo: reelsImageView.leadingAnchor),
+        blurView.trailingAnchor.constraint(equalTo: reelsImageView.trailingAnchor),
+        ])
+    }
+    
     func cleanMedia(){
-        reelsImageView.image = nil
-        stopVideo()
         if let existingLayer = playerLayer {
             existingLayer.removeFromSuperlayer()
         }
+        reelsImageView.image = nil
+        player = nil
     }
     
     /// Sets the player layer on the cell and plays the video

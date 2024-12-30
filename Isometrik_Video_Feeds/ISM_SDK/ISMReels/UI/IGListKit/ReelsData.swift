@@ -62,7 +62,7 @@ let jsonString = """
       "latForPost": 17.4284406,
       "longForPost": 78.5840116,
       "isPrivate": 0,
-      "isPaid": false,
+      "isPaid": true,
       "postAmount": 0,
       "subscriptionAmount": 0,
       "TipsAmount": 12,
@@ -286,7 +286,7 @@ let jsonString = """
               "lon": 0
             },
             "isPrivate": 0,
-            "isPaid": false,
+            "isPaid": true,
             "postAmount": 0,
             "subscriptionAmount": 100,
             "TipsAmount": 0,

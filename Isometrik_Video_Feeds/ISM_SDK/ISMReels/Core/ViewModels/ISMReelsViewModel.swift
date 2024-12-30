@@ -23,7 +23,8 @@ class ISMReelsViewModel{
                 for values in decodedResponse.data!{
                     reels.append(ISMReels(name: values.firstName ?? "",
                                           ImageUrl: values.imageUrl1 ?? "",
-                                          mediaType: values.mediaType1 ?? 0))
+                                          mediaType: values.mediaType1 ?? 0,
+                                          ispaid: values.isPaid ?? false))
                 }
                 success()
             } catch {
