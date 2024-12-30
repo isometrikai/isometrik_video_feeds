@@ -63,7 +63,7 @@ extension ISMReelsSectionController : ListScrollDelegate{
             
 //            print("Cell visibility ratio: \(visibilityRatio)")
             
-            if visibilityRatio > 0.8 {
+            if visibilityRatio > 0.7 {
                     cell.playVideo()
             } else {
                     cell.stopVideo()

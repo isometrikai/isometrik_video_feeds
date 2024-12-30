@@ -180,7 +180,4 @@ extension ISMReelsViewController{
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         button.addTarget(self, action: selector, for: .touchUpInside)
     }
-    func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(scrollToNextCell), name: .scrollToNextVideo, object: nil)
-    }
 }

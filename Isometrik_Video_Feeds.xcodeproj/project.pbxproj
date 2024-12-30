@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B28A54F2D1E834A008E0C5D /* ISMReelsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A54D2D1E834A008E0C5D /* ISMReelsUtility.swift */; };
+		6B28A5652D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A5642D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift */; };
 		6B77A6702D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6502D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift */; };
 		6B77A6712D1D5F1E00C0C6EF /* ISMReelsView+BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6542D1D5F1E00C0C6EF /* ISMReelsView+BottomBar.swift */; };
 		6B77A6722D1D5F1E00C0C6EF /* ISMReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A64D2D1D5F1E00C0C6EF /* ISMReelsViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		6B28A54D2D1E834A008E0C5D /* ISMReelsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsUtility.swift; sourceTree = "<group>"; };
+		6B28A5642D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+NotificationObservers.swift"; sourceTree = "<group>"; };
 		6B77A6482D1D5F1E00C0C6EF /* PostFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeeds.swift; sourceTree = "<group>"; };
 		6B77A64A2D1D5F1E00C0C6EF /* ISMReelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsViewModel.swift; sourceTree = "<group>"; };
 		6B77A64D2D1D5F1E00C0C6EF /* ISMReelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				6B28A5592D22610A008E0C5D /* ISMReels */,
+				6BAAACFA2D1ACA4E008E698D /* Twitter */,
+				6BAAAD132D1ACA4E008E698D /* Feeds */,
 			);
 			path = ISM_SDK;
 			sourceTree = "<group>";
@@ -222,6 +226,7 @@
 				6B77A64E2D1D5F1E00C0C6EF /* ISMReelsViewController+Actions.swift */,
 				6B77A64F2D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift */,
 				6B77A6502D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift */,
+				6B28A5642D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -357,29 +362,11 @@
 				6B28A55A2D22610A008E0C5D /* ISM_SDK */,
 				6B28A55D2D2264E1008E0C5D /* Shared */,
 				6B28A55B2D22610F008E0C5D /* Example */,
-				6BAAACF82D1ACA3A008E698D /* App */,
+				6BAAACFC2D1ACA4E008E698D /* Tabbar */,
 				6BAAACED2D1AC9FC008E698D /* Assets.xcassets */,
 				6BAAACF22D1AC9FC008E698D /* Info.plist */,
 			);
 			path = Isometrik_Video_Feeds;
-			sourceTree = "<group>";
-		};
-		6BAAACF82D1ACA3A008E698D /* App */ = {
-			isa = PBXGroup;
-			children = (
-				6BAAACF92D1ACA4E008E698D /* ISMSDK */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		6BAAACF92D1ACA4E008E698D /* ISMSDK */ = {
-			isa = PBXGroup;
-			children = (
-				6BAAACFA2D1ACA4E008E698D /* Twitter */,
-				6BAAAD132D1ACA4E008E698D /* Feeds */,
-				6BAAACFC2D1ACA4E008E698D /* Tabbar */,
-			);
-			path = ISMSDK;
 			sourceTree = "<group>";
 		};
 		6BAAACFA2D1ACA4E008E698D /* Twitter */ = {
@@ -533,6 +520,7 @@
 				6BAAAD2A2D1ACA4F008E698D /* FeedsViewController.swift in Sources */,
 				6BAAACE52D1AC9FB008E698D /* AppDelegate.swift in Sources */,
 				6BAAACE72D1AC9FB008E698D /* SceneDelegate.swift in Sources */,
+				6B28A5652D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift in Sources */,
 				6BAAAD1D2D1ACA4F008E698D /* SocialiseTabViewController.swift in Sources */,
 				6BAAAD2C2D1ACA4F008E698D /* CompositionalLayoutManager.swift in Sources */,
 			);

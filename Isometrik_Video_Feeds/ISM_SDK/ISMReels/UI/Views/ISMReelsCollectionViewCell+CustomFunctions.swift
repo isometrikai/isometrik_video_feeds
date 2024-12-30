@@ -155,7 +155,7 @@ extension ISMReelsCollectionViewCell{
         }
         
         // Start playing the video
-        player?.play()
+        playVideo()
     }
     /// Plays the video
     @objc func playVideo() {
@@ -164,5 +164,6 @@ extension ISMReelsCollectionViewCell{
     /// Stops the video from playing
     @objc func stopVideo() {
         player?.pause()
+        player?.seek(to: .zero)
     }
 }
