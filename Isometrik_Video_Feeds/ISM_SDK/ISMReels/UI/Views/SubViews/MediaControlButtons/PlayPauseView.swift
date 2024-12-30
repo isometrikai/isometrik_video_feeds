@@ -49,6 +49,7 @@ extension ISMReelsPlayPauseView {
     
     @objc func playPauseTapped() {
         isPlaying.toggle()
+        playPauseButton.tintColor = .black
         if isPlaying {
             playPauseButton.setImage(.pause , for: .normal)
             hidePlayButtonWithAnimation()
@@ -70,10 +71,10 @@ extension ISMReelsPlayPauseView {
     }
 
     func showPlayButtonWithAnimation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             UIView.animate(withDuration: 0.3, animations: {
                 // Set the button's tint color to clear
-                self?.playPauseButton.tintColor = .black
+                self?.playPauseButton.tintColor = .clear
             })
         }
     }

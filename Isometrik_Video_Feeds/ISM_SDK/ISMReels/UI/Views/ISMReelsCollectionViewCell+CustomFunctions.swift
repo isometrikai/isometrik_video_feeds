@@ -36,6 +36,7 @@ extension ISMReelsCollectionViewCell{
     }
     override func prepareForReuse() {
         super.prepareForReuse()
+        cleanMedia()
         NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
     }
     /// Passing url on the basis of if the  url is for image or video
@@ -127,7 +128,13 @@ extension ISMReelsCollectionViewCell{
             playPauseView.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
+    func cleanMedia(){
+        reelsImageView.image = nil
+        stopVideo()
+        if let existingLayer = playerLayer {
+            existingLayer.removeFromSuperlayer()
+        }
+    }
     
     /// Sets the player layer on the cell and plays the video
     /// - Parameter videoUrl: takes url that is in .mp4 format for playing the video
