@@ -29,6 +29,12 @@ class ISMReelsBottomView : UIView{
     /// Caption of the post posted bu the user on his/her post
     let captionLabel = UILabel()
     
+    var delegate : ISMReelsBottomViewDelegate?
+    var isFollowed: Bool = false {
+        didSet {
+            followButton.setTitle(isFollowed ? "Following" : "Follow", for: .normal)
+        }
+    }
     //MARK: - Initialisers
     
     override init(frame: CGRect) {
@@ -41,3 +47,4 @@ class ISMReelsBottomView : UIView{
         fatalError("init(coder:) has not been implemented")
     }
 }
+

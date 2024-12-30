@@ -8,6 +8,8 @@
 import UIKit
 import AVFoundation
 
+typealias ISMReelsDelegates = ISMReelsViewDelegate & ISMReelsBottomViewDelegate & ISMReelsSideBarSocialDelegates
+
 class ISMReelsCollectionViewCell: UICollectionViewCell {
     //MARK: - Outlets
     
@@ -60,10 +62,3 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension ISMReelsCollectionViewCell : ISMReelsViewDelegate{
-    func reelsViewDidPlayPauseTapped(isPlaying: Bool) {
-        isPlaying ? stopVideo() : playVideo()
-    }
-    
-    
-}

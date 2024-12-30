@@ -80,8 +80,8 @@ extension ISMReelsCollectionViewCell{
     /// Sets the styling of side bar view on the reels cell
     func configureSocialView() {
         socialView.translatesAutoresizingMaskIntoConstraints = false
+        socialView.delegate = self
         reelsImageView.addSubview(socialView)
-        
     }
     /// Sets the styling of bottom description view on the reels cell
     func configureBottomView() {

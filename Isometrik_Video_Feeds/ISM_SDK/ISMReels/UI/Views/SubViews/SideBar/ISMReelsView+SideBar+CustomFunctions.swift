@@ -36,7 +36,7 @@ extension ISMReelsSideBarSocialView{
     /// Styles the Mute Button
     func setupMuteButton(){
         muteButton.translatesAutoresizingMaskIntoConstraints = false
-        muteButton.setImage(UIImage(resource: .mute), for: .normal)
+        muteButton.setImage(.mute, for: .normal)
         muteButton.addTarget(self, action: #selector(muteTapped), for: .touchUpInside)
         muteButton.imageView?.contentMode = .scaleAspectFit
         buttonsStackView.addArrangedSubview(muteButton)
@@ -48,7 +48,7 @@ extension ISMReelsSideBarSocialView{
         vStack.distribution = .fill
         vStack.translatesAutoresizingMaskIntoConstraints = false
         likesButton.translatesAutoresizingMaskIntoConstraints = false
-        likesButton.setImage(UIImage(resource: .like), for: .normal)
+        likesButton.setImage(UIImage(resource: .unLike), for: .normal)
         likesButton.imageView?.contentMode = .scaleAspectFit
         likesButton.addTarget(self, action: #selector(likeTapped), for: .touchUpInside)
         

@@ -36,6 +36,10 @@ class ISMReelsSideBarSocialView : UIView{
     /// Label height that shows the count on the social View in the Reels Cell
     let labelHeight = 20.0
     
+    var delegate : ISMReelsSideBarSocialDelegates?
+    var isMute = false
+    var isLiked = false
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {

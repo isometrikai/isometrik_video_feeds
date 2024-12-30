@@ -1,26 +1,12 @@
 //
-//  PlayPauseView.swift
+//  ISMReelsPlayPauseView+CustomFunctions.swift
 //  Isometrik_Video_Feeds
 //
-//  Created by 3embed on 26/12/24.
+//  Created by 3embed on 30/12/24.
 //
 
 import Foundation
 import UIKit
-
-class ISMReelsPlayPauseView : UIView {
-    var playPauseButton = UIButton()
-    var isPlaying = true
-    var delegate : ISMReelsViewDelegate?
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 
 extension ISMReelsPlayPauseView {
     
@@ -78,8 +64,4 @@ extension ISMReelsPlayPauseView {
             })
         }
     }
-}
-
-protocol ISMReelsViewDelegate{
-    func reelsViewDidPlayPauseTapped(isPlaying: Bool)
 }

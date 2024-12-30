@@ -14,10 +14,16 @@ extension ISMReelsSideBarSocialView{
     ///  Action performed when mute button is tapped
     @objc func muteTapped(){
         print("mute Tapped")
+        isMute.toggle()
+        muteButton.setImage((isMute ? .unmute : .mute), for: .normal)
+        delegate?.muteTapped(isMute: isMute)
     }
     /// Action performed when like Button is tapped
     @objc func likeTapped(){
         print("like Tapped")
+        isLiked.toggle()
+        likesButton.setImage(isLiked ? .like : .unLike, for:  .normal)
+        delegate?.likeTapped(islike: isLiked)
     }
     /// Action performed when liews Button is tapped
     @objc func viewsTapped(){
