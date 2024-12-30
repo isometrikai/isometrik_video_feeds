@@ -21,6 +21,22 @@ extension ISMReelsCollectionViewCell{
     func addObservers(){
         NotificationCenter.default.addObserver(self, selector: #selector(stopVideo), name: .stopVideoPlayback, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(playVideo), name: .playVideoPlayback, object: nil)
+        // Add observer for when the video finishes playing
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(videoDidFinishPlaying),
+            name: .AVPlayerItemDidPlayToEndTime,
+            object: player?.currentItem
+        )
+        
+    }
+    
+    @objc func videoDidFinishPlaying() {
+//        ISMReelsUtility.postScrollToNextVideo()
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
     }
     /// Passing url on the basis of if the  url is for image or video
     /// - Parameters:
@@ -128,8 +144,6 @@ extension ISMReelsCollectionViewCell{
         
         // Initialize the AVPlayer with the video URL
         player = AVPlayer(url: videoURL)
-        
-        
         // Initialize the AVPlayerLayer and set its properties
         playerLayer = AVPlayerLayer(player: player)
         playerLayer?.videoGravity = .resizeAspect // Set the video gravity

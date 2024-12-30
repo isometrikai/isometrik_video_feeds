@@ -10,6 +10,7 @@ import Foundation
 extension NSNotification.Name {
     static let stopVideoPlayback : NSNotification.Name = NSNotification.Name("stopVideoPlayback")
     static let playVideoPlayback : NSNotification.Name = NSNotification.Name("playVideoPlayback")
+    static let scrollToNextVideo : NSNotification.Name = NSNotification.Name("scrollToNextVideo")
 }
 
 
@@ -21,6 +22,9 @@ class ISMReelsUtility {
     }
     static func postPlayVideoPlayback() {
         NotificationCenter.default.post(name: .playVideoPlayback , object: nil)
+    }
+    static func postScrollToNextVideo() {
+        NotificationCenter.default.post(name: .scrollToNextVideo , object: nil)
     }
     
 }

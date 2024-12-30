@@ -15,6 +15,7 @@ import UIKit
 extension ISMReelsViewController{
     ///Responsible for laying out the collection view , header view on the ISMReelsViewController
     func configureUI(){
+        addObserver()
         configureCollectionView()
         configureHeaderView()
         configureConstraints()
@@ -178,5 +179,8 @@ extension ISMReelsViewController{
         button.setTitleColor(.white, for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         button.addTarget(self, action: selector, for: .touchUpInside)
+    }
+    func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollToNextCell), name: .scrollToNextVideo, object: nil)
     }
 }

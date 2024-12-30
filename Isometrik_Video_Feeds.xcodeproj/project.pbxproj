@@ -109,6 +109,96 @@
 			path = ReelsHelper;
 			sourceTree = "<group>";
 		};
+		6B28A5562D22610A008E0C5D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				6B77A66E2D1D5F1E00C0C6EF /* ISMReelsHelper */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		6B28A5572D22610A008E0C5D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6B28A5622D226C24008E0C5D /* CoOrdinators */,
+				6B28A5632D226C24008E0C5D /* Services */,
+				6B28A5612D226C24008E0C5D /* Endpoints */,
+				6B77A6492D1D5F1E00C0C6EF /* Model */,
+				6B77A64B2D1D5F1E00C0C6EF /* ViewModels */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6B28A5582D22610A008E0C5D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6B77A6662D1D5F1E00C0C6EF /* IGListKit */,
+				6B77A6512D1D5F1E00C0C6EF /* Controller */,
+				6B77A65D2D1D5F1E00C0C6EF /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6B28A5592D22610A008E0C5D /* ISMReels */ = {
+			isa = PBXGroup;
+			children = (
+				6B28A5562D22610A008E0C5D /* Configuration */,
+				6B28A5572D22610A008E0C5D /* Core */,
+				6B28A5582D22610A008E0C5D /* UI */,
+			);
+			path = ISMReels;
+			sourceTree = "<group>";
+		};
+		6B28A55A2D22610A008E0C5D /* ISM_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				6B28A5592D22610A008E0C5D /* ISMReels */,
+			);
+			path = ISM_SDK;
+			sourceTree = "<group>";
+		};
+		6B28A55B2D22610F008E0C5D /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				6BAAACE42D1AC9FB008E698D /* AppDelegate.swift */,
+				6BAAACE62D1AC9FB008E698D /* SceneDelegate.swift */,
+				6BAAACE82D1AC9FB008E698D /* ViewController.swift */,
+				6BAAACEF2D1AC9FC008E698D /* LaunchScreen.storyboard */,
+				6BAAACEA2D1AC9FB008E698D /* Main.storyboard */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		6B28A55D2D2264E1008E0C5D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6B77A66D2D1D5F1E00C0C6EF /* Extensions */,
+				6BAAAD152D1ACA4F008E698D /* Utility */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6B28A5612D226C24008E0C5D /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		6B28A5622D226C24008E0C5D /* CoOrdinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoOrdinators;
+			sourceTree = "<group>";
+		};
+		6B28A5632D226C24008E0C5D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		6B77A6492D1D5F1E00C0C6EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,15 +213,6 @@
 				6B77A64A2D1D5F1E00C0C6EF /* ISMReelsViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		6B77A64C2D1D5F1E00C0C6EF /* NetworkLayer */ = {
-			isa = PBXGroup;
-			children = (
-				6B77A6492D1D5F1E00C0C6EF /* Model */,
-				6B77A64B2D1D5F1E00C0C6EF /* ViewModels */,
-			);
-			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		6B77A6512D1D5F1E00C0C6EF /* Controller */ = {
@@ -185,15 +266,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		6B77A65E2D1D5F1E00C0C6EF /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				6B77A6512D1D5F1E00C0C6EF /* Controller */,
-				6B77A65D2D1D5F1E00C0C6EF /* Views */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		6B77A6602D1D5F1E00C0C6EF /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,24 +301,6 @@
 			path = IGListKit;
 			sourceTree = "<group>";
 		};
-		6B77A6672D1D5F1E00C0C6EF /* UIlayer */ = {
-			isa = PBXGroup;
-			children = (
-				6B77A65E2D1D5F1E00C0C6EF /* Core */,
-				6B77A6662D1D5F1E00C0C6EF /* IGListKit */,
-			);
-			path = UIlayer;
-			sourceTree = "<group>";
-		};
-		6B77A6682D1D5F1E00C0C6EF /* ISMReels+IGListKit */ = {
-			isa = PBXGroup;
-			children = (
-				6B77A64C2D1D5F1E00C0C6EF /* NetworkLayer */,
-				6B77A6672D1D5F1E00C0C6EF /* UIlayer */,
-			);
-			path = "ISMReels+IGListKit";
-			sourceTree = "<group>";
-		};
 		6B77A66A2D1D5F1E00C0C6EF /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,18 +323,8 @@
 			children = (
 				6B28A54E2D1E834A008E0C5D /* ReelsHelper */,
 				6B77A66A2D1D5F1E00C0C6EF /* Enums */,
-				6B77A66D2D1D5F1E00C0C6EF /* Extensions */,
 			);
 			path = ISMReelsHelper;
-			sourceTree = "<group>";
-		};
-		6B77A66F2D1D5F1E00C0C6EF /* ISMReels */ = {
-			isa = PBXGroup;
-			children = (
-				6B77A6682D1D5F1E00C0C6EF /* ISMReels+IGListKit */,
-				6B77A66E2D1D5F1E00C0C6EF /* ISMReelsHelper */,
-			);
-			path = ISMReels;
 			sourceTree = "<group>";
 		};
 		6B77A6862D1D6BB700C0C6EF /* MediaControlButtons */ = {
@@ -310,13 +354,11 @@
 		6BAAACE32D1AC9FB008E698D /* Isometrik_Video_Feeds */ = {
 			isa = PBXGroup;
 			children = (
+				6B28A55A2D22610A008E0C5D /* ISM_SDK */,
+				6B28A55D2D2264E1008E0C5D /* Shared */,
+				6B28A55B2D22610F008E0C5D /* Example */,
 				6BAAACF82D1ACA3A008E698D /* App */,
-				6BAAACE42D1AC9FB008E698D /* AppDelegate.swift */,
-				6BAAACE62D1AC9FB008E698D /* SceneDelegate.swift */,
-				6BAAACE82D1AC9FB008E698D /* ViewController.swift */,
-				6BAAACEA2D1AC9FB008E698D /* Main.storyboard */,
 				6BAAACED2D1AC9FC008E698D /* Assets.xcassets */,
-				6BAAACEF2D1AC9FC008E698D /* LaunchScreen.storyboard */,
 				6BAAACF22D1AC9FC008E698D /* Info.plist */,
 			);
 			path = Isometrik_Video_Feeds;
@@ -325,21 +367,19 @@
 		6BAAACF82D1ACA3A008E698D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				6BAAACF92D1ACA4E008E698D /* UI Layer */,
-				6BAAAD152D1ACA4F008E698D /* Utility */,
+				6BAAACF92D1ACA4E008E698D /* ISMSDK */,
 			);
 			path = App;
 			sourceTree = "<group>";
 		};
-		6BAAACF92D1ACA4E008E698D /* UI Layer */ = {
+		6BAAACF92D1ACA4E008E698D /* ISMSDK */ = {
 			isa = PBXGroup;
 			children = (
-				6B77A66F2D1D5F1E00C0C6EF /* ISMReels */,
 				6BAAACFA2D1ACA4E008E698D /* Twitter */,
-				6BAAACFC2D1ACA4E008E698D /* Tabbar */,
 				6BAAAD132D1ACA4E008E698D /* Feeds */,
+				6BAAACFC2D1ACA4E008E698D /* Tabbar */,
 			);
-			path = "UI Layer";
+			path = ISMSDK;
 			sourceTree = "<group>";
 		};
 		6BAAACFA2D1ACA4E008E698D /* Twitter */ = {

@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "31853862-C473-464F-9A50-18190A9747C2"
+            uuid = "E24A386D-8AA1-4E7A-9250-02F72C92D3FA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Isometrik_Video_Feeds/App/UI Layer/Reels/Views/SOReelsCollectionViewCell.swift"
+            filePath = "Isometrik_Video_Feeds/App/UI Layer/ISMReels/ISMReels+IGListKit/UIlayer/Core/Views/ISMReelsCollectionViewCell+CustomFunctions.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "setUpCell(data:)"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "addObservers()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

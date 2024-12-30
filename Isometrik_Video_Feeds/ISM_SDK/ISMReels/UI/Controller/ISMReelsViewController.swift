@@ -68,5 +68,29 @@ class ISMReelsViewController: UIViewController {
         print("ISMReelsViewController deinitialised")
     }
   
+    // MARK: - Scroll to Next Cell
+    @objc func scrollToNextCell() {
+         guard let collectionView = adapter.collectionView else { return }
+
+         // Find the current visible index paths
+         let visibleIndexPaths = collectionView.indexPathsForVisibleItems.sorted()
+         guard let currentIndexPath = visibleIndexPaths.first else { return }
+
+         // Calculate the next item index
+         let nextIndexPath = IndexPath(item: currentIndexPath.item + 1, section: currentIndexPath.section)
+
+         // Check if the next item index is within bounds
+         let numberOfItems = collectionView.numberOfItems(inSection: currentIndexPath.section)
+         if nextIndexPath.item < numberOfItems {
+             collectionView.scrollToItem(at: nextIndexPath, at: .centeredVertically, animated: true)
+         } else if currentIndexPath.section + 1 < collectionView.numberOfSections {
+             // Move to the first item of the next section
+             let nextSectionIndexPath = IndexPath(item: 0, section: currentIndexPath.section + 1)
+             collectionView.scrollToItem(at: nextSectionIndexPath, at: .centeredVertically, animated: true)
+         } else {
+             print("Reached the end of the collection view.")
+         }
+
+     }
 }
 
