@@ -40,5 +40,6 @@ extension ISMReelsSideBarSocialView{
     /// Action performed when More Button is tapped
     @objc func moreTapped(){
         print("More Tapped")
+        ISMReelsUtility.postOpenMoreView()
     }
 }

@@ -29,9 +29,11 @@ class ISMReelsBottomView : UIView{
     /// Caption of the post posted bu the user on his/her post
     let captionLabel = UILabel()
     
+    var data : ISMReels!
     var delegate : ISMReelsBottomViewDelegate?
     var isFollowed: Bool = false {
         didSet {
+            data.setFollowStatus(isfollow: isFollowed)
             followButton.setTitle(isFollowed ? "Following" : "Follow", for: .normal)
         }
     }

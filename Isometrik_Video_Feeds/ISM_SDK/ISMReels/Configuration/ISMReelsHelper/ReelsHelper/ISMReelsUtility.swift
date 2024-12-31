@@ -11,6 +11,7 @@ extension NSNotification.Name {
     static let stopVideoPlayback : NSNotification.Name = NSNotification.Name("stopVideoPlayback")
     static let playVideoPlayback : NSNotification.Name = NSNotification.Name("playVideoPlayback")
     static let scrollToNextVideo : NSNotification.Name = NSNotification.Name("scrollToNextVideo")
+    static let openMoreView : NSNotification.Name = NSNotification.Name("openMoreView")
 }
 
 
@@ -26,5 +27,9 @@ class ISMReelsUtility {
     static func postScrollToNextVideo() {
         NotificationCenter.default.post(name: .scrollToNextVideo , object: nil)
     }
+    static func postOpenMoreView() {
+        NotificationCenter.default.post(name: .openMoreView , object: nil)
+    }
+    
     
 }

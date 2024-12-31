@@ -14,12 +14,18 @@ class ISMReels : ListDiffable{
     private(set) var ImageUrl : String
     private(set) var mediaType : Int
     private(set) var isPaid : Bool
+    private(set) var isfollow : Bool
     
-    init(name: String , ImageUrl : String , mediaType : Int , ispaid : Bool = false ) {
+    init(name: String , ImageUrl : String , mediaType : Int , ispaid : Bool = false , isfollow : Bool = false ) {
         self.name = name
         self.ImageUrl = ImageUrl
         self.mediaType = mediaType
         self.isPaid = ispaid
+        self.isfollow = isfollow
+    }
+    
+    func setFollowStatus(isfollow : Bool){
+        self.isfollow = isfollow
     }
     
     func diffIdentifier() -> NSObjectProtocol {

@@ -8,19 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6B28A54F2D1E834A008E0C5D /* ISMReelsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A54D2D1E834A008E0C5D /* ISMReelsUtility.swift */; };
-		6B28A5652D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A5642D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift */; };
 		6B28A5672D22B79F008E0C5D /* ISMReelsCollectionViewCell+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A5662D22B79F008E0C5D /* ISMReelsCollectionViewCell+Delegates.swift */; };
 		6B28A5692D22B80D008E0C5D /* ISMReelsPlayPauseView+CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A5682D22B80D008E0C5D /* ISMReelsPlayPauseView+CustomFunctions.swift */; };
 		6B28A56B2D22B852008E0C5D /* ISMReelsPlayPauseView+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A56A2D22B852008E0C5D /* ISMReelsPlayPauseView+Delegates.swift */; };
 		6B28A56D2D22B87C008E0C5D /* ISMReelsBottomView+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A56C2D22B87C008E0C5D /* ISMReelsBottomView+Delegates.swift */; };
 		6B28A56F2D22B89B008E0C5D /* ISMReelsSideBarSocialView+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A56E2D22B89B008E0C5D /* ISMReelsSideBarSocialView+Delegates.swift */; };
 		6B28A5752D22C08A008E0C5D /* ISMReelsView+BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A5742D22C08A008E0C5D /* ISMReelsView+BlurView.swift */; };
-		6B77A6702D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6502D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift */; };
 		6B77A6712D1D5F1E00C0C6EF /* ISMReelsView+BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6542D1D5F1E00C0C6EF /* ISMReelsView+BottomBar.swift */; };
-		6B77A6722D1D5F1E00C0C6EF /* ISMReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A64D2D1D5F1E00C0C6EF /* ISMReelsViewController.swift */; };
 		6B77A6732D1D5F1E00C0C6EF /* SocialiseReelsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A65F2D1D5F1E00C0C6EF /* SocialiseReelsDataSource.swift */; };
 		6B77A6742D1D5F1E00C0C6EF /* ISMReelsBottomView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6522D1D5F1E00C0C6EF /* ISMReelsBottomView+Actions.swift */; };
-		6B77A6752D1D5F1E00C0C6EF /* ISMReelsViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A64E2D1D5F1E00C0C6EF /* ISMReelsViewController+Actions.swift */; };
 		6B77A6762D1D5F1E00C0C6EF /* SocialiseReelsSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6632D1D5F1E00C0C6EF /* SocialiseReelsSectionController.swift */; };
 		6B77A6772D1D5F1E00C0C6EF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A66C2D1D5F1E00C0C6EF /* UIView.swift */; };
 		6B77A6782D1D5F1E00C0C6EF /* ReelsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6652D1D5F1E00C0C6EF /* ReelsData.swift */; };
@@ -34,7 +30,6 @@
 		6B77A6802D1D5F1E00C0C6EF /* ISMReelsView+SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6562D1D5F1E00C0C6EF /* ISMReelsView+SideBar.swift */; };
 		6B77A6812D1D5F1E00C0C6EF /* ISMReelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A65B2D1D5F1E00C0C6EF /* ISMReelsCollectionViewCell.swift */; };
 		6B77A6822D1D5F1E00C0C6EF /* ISMReelsView+SideBar+CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6582D1D5F1E00C0C6EF /* ISMReelsView+SideBar+CustomFunctions.swift */; };
-		6B77A6832D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A64F2D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift */; };
 		6B77A6842D1D5F1E00C0C6EF /* PostFeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6482D1D5F1E00C0C6EF /* PostFeeds.swift */; };
 		6B77A68A2D1D6BF700C0C6EF /* ISMReelsView+Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B77A6892D1D6BF700C0C6EF /* ISMReelsView+Playback.swift */; };
 		6BAAACE52D1AC9FB008E698D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAAACE42D1AC9FB008E698D /* AppDelegate.swift */; };
@@ -52,11 +47,16 @@
 		6BAAAD352D1ACAA6008E698D /* IGListSwiftKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6BAAAD342D1ACAA6008E698D /* IGListSwiftKit */; };
 		6BAAAD422D1C0B06008E698D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6BAAAD412D1C0B06008E698D /* Kingfisher */; };
 		6BAAAD442D1C0DC4008E698D /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAAAD432D1C0DC4008E698D /* KingfisherManager.swift */; };
+		6BF0503A2D23DAD3005D5CBD /* ISMReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050342D23DAD3005D5CBD /* ISMReelsViewController.swift */; };
+		6BF0503B2D23DAD3005D5CBD /* ISMReelsViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050352D23DAD3005D5CBD /* ISMReelsViewController+Actions.swift */; };
+		6BF0503C2D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050362D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift */; };
+		6BF0503D2D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050372D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift */; };
+		6BF0503E2D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050382D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift */; };
+		6BF050422D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050402D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B28A54D2D1E834A008E0C5D /* ISMReelsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsUtility.swift; sourceTree = "<group>"; };
-		6B28A5642D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+NotificationObservers.swift"; sourceTree = "<group>"; };
 		6B28A5662D22B79F008E0C5D /* ISMReelsCollectionViewCell+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsCollectionViewCell+Delegates.swift"; sourceTree = "<group>"; };
 		6B28A5682D22B80D008E0C5D /* ISMReelsPlayPauseView+CustomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsPlayPauseView+CustomFunctions.swift"; sourceTree = "<group>"; };
 		6B28A56A2D22B852008E0C5D /* ISMReelsPlayPauseView+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsPlayPauseView+Delegates.swift"; sourceTree = "<group>"; };
@@ -65,10 +65,6 @@
 		6B28A5742D22C08A008E0C5D /* ISMReelsView+BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsView+BlurView.swift"; sourceTree = "<group>"; };
 		6B77A6482D1D5F1E00C0C6EF /* PostFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeeds.swift; sourceTree = "<group>"; };
 		6B77A64A2D1D5F1E00C0C6EF /* ISMReelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsViewModel.swift; sourceTree = "<group>"; };
-		6B77A64D2D1D5F1E00C0C6EF /* ISMReelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsViewController.swift; sourceTree = "<group>"; };
-		6B77A64E2D1D5F1E00C0C6EF /* ISMReelsViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+Actions.swift"; sourceTree = "<group>"; };
-		6B77A64F2D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+CustomFunctions.swift"; sourceTree = "<group>"; };
-		6B77A6502D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+Routing.swift"; sourceTree = "<group>"; };
 		6B77A6522D1D5F1E00C0C6EF /* ISMReelsBottomView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsBottomView+Actions.swift"; sourceTree = "<group>"; };
 		6B77A6532D1D5F1E00C0C6EF /* ISMReelsBottomView+CustomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsBottomView+CustomFunctions.swift"; sourceTree = "<group>"; };
 		6B77A6542D1D5F1E00C0C6EF /* ISMReelsView+BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsView+BottomBar.swift"; sourceTree = "<group>"; };
@@ -98,6 +94,12 @@
 		6BAAAD142D1ACA4E008E698D /* FeedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
 		6BAAAD182D1ACA4F008E698D /* CompositionalLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutManager.swift; sourceTree = "<group>"; };
 		6BAAAD432D1C0DC4008E698D /* KingfisherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingfisherManager.swift; sourceTree = "<group>"; };
+		6BF050342D23DAD3005D5CBD /* ISMReelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsViewController.swift; sourceTree = "<group>"; };
+		6BF050352D23DAD3005D5CBD /* ISMReelsViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+Actions.swift"; sourceTree = "<group>"; };
+		6BF050362D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+CustomFunctions.swift"; sourceTree = "<group>"; };
+		6BF050372D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+NotificationObservers.swift"; sourceTree = "<group>"; };
+		6BF050382D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+Routing.swift"; sourceTree = "<group>"; };
+		6BF050402D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsMoreOptionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -246,11 +248,8 @@
 		6B77A6512D1D5F1E00C0C6EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6B77A64D2D1D5F1E00C0C6EF /* ISMReelsViewController.swift */,
-				6B77A64E2D1D5F1E00C0C6EF /* ISMReelsViewController+Actions.swift */,
-				6B77A64F2D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift */,
-				6B77A6502D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift */,
-				6B28A5642D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift */,
+				6BF050412D23DAF8005D5CBD /* Options */,
+				6BF050392D23DAD3005D5CBD /* Reels */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -280,6 +279,7 @@
 		6B77A65A2D1D5F1E00C0C6EF /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				6BF050312D23C561005D5CBD /* MoreOptionsView */,
 				6B28A5732D22C058008E0C5D /* BlurView */,
 				6B77A6862D1D6BB700C0C6EF /* MediaControlButtons */,
 				6B77A6552D1D5F1E00C0C6EF /* BottomBar */,
@@ -441,6 +441,33 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		6BF050312D23C561005D5CBD /* MoreOptionsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoreOptionsView;
+			sourceTree = "<group>";
+		};
+		6BF050392D23DAD3005D5CBD /* Reels */ = {
+			isa = PBXGroup;
+			children = (
+				6BF050342D23DAD3005D5CBD /* ISMReelsViewController.swift */,
+				6BF050352D23DAD3005D5CBD /* ISMReelsViewController+Actions.swift */,
+				6BF050362D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift */,
+				6BF050372D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift */,
+				6BF050382D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift */,
+			);
+			path = Reels;
+			sourceTree = "<group>";
+		};
+		6BF050412D23DAF8005D5CBD /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				6BF050402D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,19 +553,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BAAAD1C2D1ACA4F008E698D /* TwitterViewController.swift in Sources */,
-				6B77A6702D1D5F1E00C0C6EF /* ISMReelsViewController+Routing.swift in Sources */,
 				6B77A6712D1D5F1E00C0C6EF /* ISMReelsView+BottomBar.swift in Sources */,
 				6B28A5672D22B79F008E0C5D /* ISMReelsCollectionViewCell+Delegates.swift in Sources */,
-				6B77A6722D1D5F1E00C0C6EF /* ISMReelsViewController.swift in Sources */,
 				6B77A6732D1D5F1E00C0C6EF /* SocialiseReelsDataSource.swift in Sources */,
 				6B77A6742D1D5F1E00C0C6EF /* ISMReelsBottomView+Actions.swift in Sources */,
-				6B77A6752D1D5F1E00C0C6EF /* ISMReelsViewController+Actions.swift in Sources */,
+				6BF050422D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift in Sources */,
 				6B28A5752D22C08A008E0C5D /* ISMReelsView+BlurView.swift in Sources */,
 				6B28A56F2D22B89B008E0C5D /* ISMReelsSideBarSocialView+Delegates.swift in Sources */,
 				6B77A6762D1D5F1E00C0C6EF /* SocialiseReelsSectionController.swift in Sources */,
 				6B77A6772D1D5F1E00C0C6EF /* UIView.swift in Sources */,
 				6B28A56D2D22B87C008E0C5D /* ISMReelsBottomView+Delegates.swift in Sources */,
 				6B77A6782D1D5F1E00C0C6EF /* ReelsData.swift in Sources */,
+				6BF0503A2D23DAD3005D5CBD /* ISMReelsViewController.swift in Sources */,
+				6BF0503B2D23DAD3005D5CBD /* ISMReelsViewController+Actions.swift in Sources */,
+				6BF0503C2D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift in Sources */,
+				6BF0503D2D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift in Sources */,
+				6BF0503E2D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift in Sources */,
 				6B77A6792D1D5F1E00C0C6EF /* ISMReelsEnums.swift in Sources */,
 				6B77A67A2D1D5F1E00C0C6EF /* ISMReelsBottomView+CustomFunctions.swift in Sources */,
 				6B77A67B2D1D5F1E00C0C6EF /* ISMReelsView+SideBar+Actions.swift in Sources */,
@@ -550,7 +580,6 @@
 				6B77A6802D1D5F1E00C0C6EF /* ISMReelsView+SideBar.swift in Sources */,
 				6B77A6812D1D5F1E00C0C6EF /* ISMReelsCollectionViewCell.swift in Sources */,
 				6B77A6822D1D5F1E00C0C6EF /* ISMReelsView+SideBar+CustomFunctions.swift in Sources */,
-				6B77A6832D1D5F1E00C0C6EF /* ISMReelsViewController+CustomFunctions.swift in Sources */,
 				6B77A6842D1D5F1E00C0C6EF /* PostFeeds.swift in Sources */,
 				6B28A56B2D22B852008E0C5D /* ISMReelsPlayPauseView+Delegates.swift in Sources */,
 				6BAAACE92D1AC9FB008E698D /* ViewController.swift in Sources */,
@@ -560,7 +589,6 @@
 				6B28A5692D22B80D008E0C5D /* ISMReelsPlayPauseView+CustomFunctions.swift in Sources */,
 				6BAAACE52D1AC9FB008E698D /* AppDelegate.swift in Sources */,
 				6BAAACE72D1AC9FB008E698D /* SceneDelegate.swift in Sources */,
-				6B28A5652D2294B7008E0C5D /* ISMReelsViewController+NotificationObservers.swift in Sources */,
 				6BAAAD1D2D1ACA4F008E698D /* SocialiseTabViewController.swift in Sources */,
 				6BAAAD2C2D1ACA4F008E698D /* CompositionalLayoutManager.swift in Sources */,
 			);

@@ -52,7 +52,10 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
     
    //MARK: - Setting up Cell
     func setUpCell(data : ISMReels){
+        bottomView.data = data
         bottomView.nameLabel.text = data.name
+        bottomView.isFollowed = data.isfollow
+        
         configureMedia(url: data.ImageUrl, mediaType: data.mediaType)
         //set up the remaining UI over the image or video
         configureSocialView()

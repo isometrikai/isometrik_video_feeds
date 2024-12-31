@@ -11,6 +11,7 @@ import UIKit
 extension ISMReelsViewController{
     func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(scrollToNextCell), name: .scrollToNextVideo, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(openMoreView), name: .openMoreView, object: nil)
         NotificationCenter.default.addObserver(
               self,
               selector: #selector(playMostVisibleCellVideo),
@@ -22,6 +23,7 @@ extension ISMReelsViewController{
     func removeObserver() {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: .scrollToNextVideo, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .openMoreView, object: nil)
     }
     
     @objc func playMostVisibleCellVideo() {
@@ -54,5 +56,14 @@ extension ISMReelsViewController{
             player.play()
         }
     }
+    
+    @objc func openMoreView() {
+        let moreOptionsVC = ISMReelsMoreOptionsViewController()
+        moreOptionsVC.modalPresentationStyle = .overCurrentContext // Or .overFullScreen
+        moreOptionsVC.modalTransitionStyle = .crossDissolve
+        present(moreOptionsVC, animated: true, completion: nil)
+    }
+
+
 
 }

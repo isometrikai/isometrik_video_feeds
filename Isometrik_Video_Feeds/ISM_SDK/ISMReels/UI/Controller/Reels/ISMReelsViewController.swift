@@ -65,6 +65,7 @@ class ISMReelsViewController: UIViewController {
     }
     
     deinit {
+        removeObserver()
         print("ISMReelsViewController deinitialised")
     }
   
