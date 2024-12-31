@@ -59,13 +59,16 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
         configureBottomView()
         configurePlayPauseView()
         configureConstraints()
-        if data.isPaid{
+        if data.isPaid {
             configureBlurView()
             addBlurViewConstraints()
+            blurView.isHidden = false
+        } else {
+            blurView.removeFromSuperview() // Ensure it’s not lingering
         }
-       
-       
-       
+        
+        
+        
     }
 }
 

@@ -52,6 +52,7 @@ extension ISMReelsCollectionViewCell{
         case .some(let type ):
             switch type{
             case .image:
+                cleanMedia()
                 FeedsKingfisherManager.shared.setImage(image: mediaUrl, imageView: reelsImageView)
                 playPauseView.isHidden = true
                 socialView.muteButton.isHidden = true
@@ -96,9 +97,11 @@ extension ISMReelsCollectionViewCell{
         
     }
     func configureBlurView() {
+        if !reelsImageView.subviews.contains(blurView) {
             blurView.translatesAutoresizingMaskIntoConstraints = false
             //        blurView.backgroundColor = .systemPink
             reelsImageView.addSubview(blurView)
+        }
     }
     
     /// Configures the constarints of the reels cell
@@ -149,8 +152,14 @@ extension ISMReelsCollectionViewCell{
         if let existingLayer = playerLayer {
             existingLayer.removeFromSuperlayer()
         }
+        // Remove or hide blur view
+        blurView.removeFromSuperview()
+        blurView.isHidden = true
+        // Clear media-related components
         reelsImageView.image = nil
+        stopVideo()
         player = nil
+        playerLayer = nil
     }
     
     /// Sets the player layer on the cell and plays the video
@@ -162,9 +171,7 @@ extension ISMReelsCollectionViewCell{
             return
         }
         // Remove any existing player layer from the view
-        if let existingLayer = playerLayer {
-            existingLayer.removeFromSuperlayer()
-        }
+        cleanMedia()
         
         // Initialize the AVPlayer with the video URL
         player = AVPlayer(url: videoURL)
