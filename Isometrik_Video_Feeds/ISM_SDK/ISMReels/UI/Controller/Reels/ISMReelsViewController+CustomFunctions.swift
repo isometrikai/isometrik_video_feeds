@@ -31,7 +31,7 @@ extension ISMReelsViewController{
     /// Configures the styling of profile button that displays the user's profile picture in the header .It also has a target to open profile View Controller
     func configureProfileView(){
         profileButton = UIButton()
-        profileButton.setImage(UIImage(resource: .reels), for: .normal)
+        profileButton.setImage(UIImage(resource: .iconProfile), for: .normal)
         profileButton.backgroundColor = .soAppBase
         profileButton.layer.cornerRadius = 15
         profileButton.translatesAutoresizingMaskIntoConstraints = false

@@ -50,7 +50,7 @@ extension ISMReelsBottomView {
     /// Sets the styling of the profile Button
     func setUpProfileButton(){
         profileButton.translatesAutoresizingMaskIntoConstraints = false
-        profileButton.setImage(UIImage(resource: .reels), for: .normal)
+        profileButton.setImage(UIImage(resource: .iconProfile), for: .normal)
         profileButton.layer.cornerRadius = 25
         profileButton.backgroundColor = .soAppBase
         profileButton.addTarget(self, action: #selector(profileTapped), for: .touchUpInside)
@@ -69,7 +69,7 @@ extension ISMReelsBottomView {
     /// Sets the styling of the star indicator View
     func setUpStarStatusView(){
         starIndicatorImageView.translatesAutoresizingMaskIntoConstraints = false
-        starIndicatorImageView.image = UIImage(resource: .like)
+        starIndicatorImageView.image = UIImage(resource: .iconStar)
         starIndicatorImageView.contentMode = .scaleAspectFit
         infoContainerView.addSubview(starIndicatorImageView)
     }

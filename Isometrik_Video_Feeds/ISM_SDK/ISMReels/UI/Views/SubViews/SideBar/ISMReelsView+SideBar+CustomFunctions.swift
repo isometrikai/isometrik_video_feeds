@@ -13,7 +13,7 @@ extension ISMReelsSideBarSocialView{
     func setUpUI(){
         buttonsStackView.axis = .vertical
         buttonsStackView.spacing = 10
-        buttonsStackView.distribution = .fill
+        buttonsStackView.distribution = .fillEqually
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonsStackView)
         for button in socialButtons{
@@ -36,117 +36,92 @@ extension ISMReelsSideBarSocialView{
     /// Styles the Mute Button
     func setupMuteButton(){
         muteButton.translatesAutoresizingMaskIntoConstraints = false
-        muteButton.setImage(.mute, for: .normal)
-        muteButton.addTarget(self, action: #selector(muteTapped), for: .touchUpInside)
-        muteButton.imageView?.contentMode = .scaleAspectFit
-        buttonsStackView.addArrangedSubview(muteButton)
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        setupsButtonAndCount(button: muteButton, label: label, imageName: .mute, selector: #selector(muteTapped))
     }
     /// Styles the like button and Count Label
     func setupLikesButtonAndLikesCount(){
-        let vStack = UIStackView()
-        vStack.axis = .vertical
-        vStack.distribution = .fill
-        vStack.translatesAutoresizingMaskIntoConstraints = false
         likesButton.translatesAutoresizingMaskIntoConstraints = false
-        likesButton.setImage(UIImage(resource: .unLike), for: .normal)
-        likesButton.imageView?.contentMode = .scaleAspectFit
-        likesButton.addTarget(self, action: #selector(likeTapped), for: .touchUpInside)
-        
         likesCount.translatesAutoresizingMaskIntoConstraints = false
-        likesCount.text = "0"
-        likesCount.textColor = .white
-        likesCount.textAlignment = .center
-        
-        vStack.addArrangedSubview(likesButton)
-        vStack.addArrangedSubview(likesCount)
-        buttonsStackView.addArrangedSubview(vStack)
-        
+        setupsButtonAndCount(button: likesButton, label: likesCount, imageName: .unLike, selector: #selector(likeTapped),count: "0")
     }
     /// Styles the views Button And Views label
     func setupViewsButtonAndViewsCount(){
-        let vStack = UIStackView()
-        vStack.axis = .vertical
-        vStack.distribution = .fill
-        vStack.translatesAutoresizingMaskIntoConstraints = false
         viewsButton.translatesAutoresizingMaskIntoConstraints = false
-        viewsButton.setImage(UIImage(resource: .views), for: .normal)
-        viewsButton.imageView?.contentMode = .scaleAspectFit
-        viewsButton.addTarget(self, action: #selector(viewsTapped), for: .touchUpInside)
-        
         viewsCount.translatesAutoresizingMaskIntoConstraints = false
-        viewsCount.text = "0"
-        viewsCount.textColor = .white
-        viewsCount.textAlignment = .center
-        
-        vStack.addArrangedSubview(viewsButton)
-        vStack.addArrangedSubview(viewsCount)
-        buttonsStackView.addArrangedSubview(vStack)
-        
+        setupsButtonAndCount(button: viewsButton, label: viewsCount, imageName: .views , selector: #selector(viewsTapped),count: "0")
     }
     /// Styles the comments Button and Comments Label
     func setupCommentsButtonAndCommentsCount(){
-        let vStack = UIStackView()
-        vStack.axis = .vertical
-        vStack.distribution = .fill
-        vStack.translatesAutoresizingMaskIntoConstraints = false
         commentsButton.translatesAutoresizingMaskIntoConstraints = false
-        commentsButton.setImage(UIImage(resource: .comments), for: .normal)
-        commentsButton.imageView?.contentMode = .scaleAspectFit
-        commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
-        
         commentsCount.translatesAutoresizingMaskIntoConstraints = false
-        commentsCount.text = "0"
-        commentsCount.textColor = .white
-        commentsCount.textAlignment = .center
-        
-        vStack.addArrangedSubview(commentsButton)
-        vStack.addArrangedSubview(commentsCount)
-        buttonsStackView.addArrangedSubview(vStack)
-        
+        setupsButtonAndCount(button: commentsButton, label: commentsCount, imageName: .comments, selector: #selector(commentsTapped),count: "0")
     }
     /// Styles the Share Button
     func setupShareButton(){
         shareButton.translatesAutoresizingMaskIntoConstraints = false
-        shareButton.setImage(UIImage(resource: .share), for: .normal)
-        shareButton.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
-        shareButton.imageView?.contentMode = .scaleAspectFit
-        buttonsStackView.addArrangedSubview(shareButton)
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        setupsButtonAndCount(button: shareButton, label: label, imageName: .share, selector: #selector(shareTapped))
     }
     /// Styles the More button
     func setupMoreutton(){
         moreButton.translatesAutoresizingMaskIntoConstraints = false
-        moreButton.setImage(UIImage(resource: .more), for: .normal)
-        moreButton.addTarget(self, action: #selector(moreTapped), for: .touchUpInside)
-        moreButton.imageView?.contentMode = .scaleAspectFit
-        buttonsStackView.addArrangedSubview(moreButton)
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        setupsButtonAndCount(button: moreButton, label: label, imageName: .more, selector: #selector(moreTapped))
     }
+    
+    func setupsButtonAndCount(button : UIButton , label : UILabel , imageName : ImageResource ,  selector : Selector ,count : String = " ") {
+        let vStack = UIStackView()
+        vStack.axis = .vertical
+        vStack.distribution = .fillEqually
+        vStack.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(resource: imageName), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.addTarget(self, action: selector, for: .touchUpInside)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = count
+        label.font = .systemFont(ofSize: 12)
+        label.textColor = .white
+        label.textAlignment = .center
+        
+        vStack.addArrangedSubview(button)
+        vStack.addArrangedSubview(label)
+        buttonsStackView.addArrangedSubview(vStack)
+    }
+    
     /// Set up constraints for the side bar vIew
     func setUpConstraints(){
         let constraints : [NSLayoutConstraint] = [
-            likesButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
-            likesButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
-            likesCount.heightAnchor.constraint(equalToConstant: labelHeight),
-            
-            viewsButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
-            viewsButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
-            viewsCount.heightAnchor.constraint(equalToConstant: labelHeight),
-            
-            commentsButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
-            commentsButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
-            commentsCount.heightAnchor.constraint(equalToConstant: labelHeight),
-            
-            shareButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
-            shareButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
-            
-            moreButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
-            moreButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
-            
-            muteButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
-            muteButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            likesButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            likesButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            likesCount.heightAnchor.constraint(equalToConstant: labelHeight),
+//            
+//            viewsButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            viewsButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            viewsCount.heightAnchor.constraint(equalToConstant: labelHeight),
+//            
+//            commentsButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            commentsButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            commentsCount.heightAnchor.constraint(equalToConstant: labelHeight),
+//            
+//            shareButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            shareButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            
+//            moreButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            moreButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            
+//            muteButton.heightAnchor.constraint(equalToConstant: socialButtonsWidth),
+//            muteButton.widthAnchor.constraint(equalToConstant: socialButtonsWidth),
             
             buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
             buttonsStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             buttonsStackView.widthAnchor.constraint(equalToConstant: 50),
+            buttonsStackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5)
         ]
         NSLayoutConstraint.activate(constraints)
     }

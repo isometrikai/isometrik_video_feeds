@@ -93,7 +93,7 @@ public struct ISMTheme {
         
         public func show(contentType: ISMContentType,
                          completion: @escaping (Result<Void, ISMError>) -> Void) {
-            guard let config = configuration else {
+            guard let _ = configuration else {
                 completion(.failure(.notInitialized))
                 return
             }
