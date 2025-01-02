@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class TabBarViewController: UITabBarController , UITabBarControllerDelegate {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTabBar()
@@ -17,7 +18,7 @@ class TabBarViewController: UITabBarController , UITabBarControllerDelegate {
     
     func setUpTabBar() {
         // Create view controllers for each tab
-        let reelsVC = ISMReelsViewController()
+        let reelsVC = ParentViewController()
         let feedsVC = FeedsViewController()
         let twitterVC = TwitterViewController()
         
@@ -40,8 +41,8 @@ class TabBarViewController: UITabBarController , UITabBarControllerDelegate {
     }
     
     func setTabSelectionPlaybackForReels(viewController : UIViewController){
-        if self.viewControllers?.first(where: { $0 is ISMReelsViewController }) is ISMReelsViewController {
-            if viewController is ISMReelsViewController {
+        if self.viewControllers?.first(where: { $0 is ParentViewController }) is ParentViewController {
+            if viewController is ParentViewController {
                 // Notify ISMReelsViewController to play video
                 ISMReelsUtility.postPlayVideoPlayback()
             } else {

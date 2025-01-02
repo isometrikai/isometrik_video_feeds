@@ -21,3 +21,12 @@ enum ISMReelsMediaType : Int{
     case image = 0
     case video = 1
 }
+
+enum MediaOptions{
+    case bookmark
+    case share
+    case download
+    case copyLink
+    case record
+    case report
+}

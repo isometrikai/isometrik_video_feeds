@@ -53,6 +53,10 @@
 		6BF0503D2D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050372D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift */; };
 		6BF0503E2D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050382D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift */; };
 		6BF050422D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050402D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift */; };
+		6BF050452D240838005D5CBD /* ISMReelsMoreOptionsViewController+CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050442D240838005D5CBD /* ISMReelsMoreOptionsViewController+CustomViews.swift */; };
+		6BF050472D2408B6005D5CBD /* MoreOptions+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050462D2408B6005D5CBD /* MoreOptions+CollectionView.swift */; };
+		6BF050492D2408FD005D5CBD /* ISMReelsOptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050482D2408FD005D5CBD /* ISMReelsOptionsCollectionViewCell.swift */; };
+		6BF050512D240F2B005D5CBD /* ISMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0504F2D240F2B005D5CBD /* ISMConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +104,10 @@
 		6BF050372D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+NotificationObservers.swift"; sourceTree = "<group>"; };
 		6BF050382D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+Routing.swift"; sourceTree = "<group>"; };
 		6BF050402D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsMoreOptionsViewController.swift; sourceTree = "<group>"; };
+		6BF050442D240838005D5CBD /* ISMReelsMoreOptionsViewController+CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsMoreOptionsViewController+CustomViews.swift"; sourceTree = "<group>"; };
+		6BF050462D2408B6005D5CBD /* MoreOptions+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoreOptions+CollectionView.swift"; sourceTree = "<group>"; };
+		6BF050482D2408FD005D5CBD /* ISMReelsOptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsOptionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		6BF0504F2D240F2B005D5CBD /* ISMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -132,6 +140,7 @@
 		6B28A5562D22610A008E0C5D /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				6BF050502D240F2B005D5CBD /* Config */,
 				6B77A66E2D1D5F1E00C0C6EF /* ISMReelsHelper */,
 			);
 			path = Configuration;
@@ -444,6 +453,7 @@
 		6BF050312D23C561005D5CBD /* MoreOptionsView */ = {
 			isa = PBXGroup;
 			children = (
+				6BF050482D2408FD005D5CBD /* ISMReelsOptionsCollectionViewCell.swift */,
 			);
 			path = MoreOptionsView;
 			sourceTree = "<group>";
@@ -464,8 +474,18 @@
 			isa = PBXGroup;
 			children = (
 				6BF050402D23DAF8005D5CBD /* ISMReelsMoreOptionsViewController.swift */,
+				6BF050442D240838005D5CBD /* ISMReelsMoreOptionsViewController+CustomViews.swift */,
+				6BF050462D2408B6005D5CBD /* MoreOptions+CollectionView.swift */,
 			);
 			path = Options;
+			sourceTree = "<group>";
+		};
+		6BF050502D240F2B005D5CBD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6BF0504F2D240F2B005D5CBD /* ISMConfig.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,6 +581,7 @@
 				6B28A5752D22C08A008E0C5D /* ISMReelsView+BlurView.swift in Sources */,
 				6B28A56F2D22B89B008E0C5D /* ISMReelsSideBarSocialView+Delegates.swift in Sources */,
 				6B77A6762D1D5F1E00C0C6EF /* SocialiseReelsSectionController.swift in Sources */,
+				6BF050512D240F2B005D5CBD /* ISMConfig.swift in Sources */,
 				6B77A6772D1D5F1E00C0C6EF /* UIView.swift in Sources */,
 				6B28A56D2D22B87C008E0C5D /* ISMReelsBottomView+Delegates.swift in Sources */,
 				6B77A6782D1D5F1E00C0C6EF /* ReelsData.swift in Sources */,
@@ -575,11 +596,13 @@
 				6B77A67C2D1D5F1E00C0C6EF /* ISMReelsViewModel.swift in Sources */,
 				6B77A67D2D1D5F1E00C0C6EF /* ISMReelsCollectionViewCell+CustomFunctions.swift in Sources */,
 				6B28A54F2D1E834A008E0C5D /* ISMReelsUtility.swift in Sources */,
+				6BF050492D2408FD005D5CBD /* ISMReelsOptionsCollectionViewCell.swift in Sources */,
 				6B77A67E2D1D5F1E00C0C6EF /* SocaliseReels.swift in Sources */,
 				6B77A67F2D1D5F1E00C0C6EF /* UIImageView.swift in Sources */,
 				6B77A6802D1D5F1E00C0C6EF /* ISMReelsView+SideBar.swift in Sources */,
 				6B77A6812D1D5F1E00C0C6EF /* ISMReelsCollectionViewCell.swift in Sources */,
 				6B77A6822D1D5F1E00C0C6EF /* ISMReelsView+SideBar+CustomFunctions.swift in Sources */,
+				6BF050452D240838005D5CBD /* ISMReelsMoreOptionsViewController+CustomViews.swift in Sources */,
 				6B77A6842D1D5F1E00C0C6EF /* PostFeeds.swift in Sources */,
 				6B28A56B2D22B852008E0C5D /* ISMReelsPlayPauseView+Delegates.swift in Sources */,
 				6BAAACE92D1AC9FB008E698D /* ViewController.swift in Sources */,
@@ -589,6 +612,7 @@
 				6B28A5692D22B80D008E0C5D /* ISMReelsPlayPauseView+CustomFunctions.swift in Sources */,
 				6BAAACE52D1AC9FB008E698D /* AppDelegate.swift in Sources */,
 				6BAAACE72D1AC9FB008E698D /* SceneDelegate.swift in Sources */,
+				6BF050472D2408B6005D5CBD /* MoreOptions+CollectionView.swift in Sources */,
 				6BAAAD1D2D1ACA4F008E698D /* SocialiseTabViewController.swift in Sources */,
 				6BAAAD2C2D1ACA4F008E698D /* CompositionalLayoutManager.swift in Sources */,
 			);
