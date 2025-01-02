@@ -13,21 +13,60 @@ class ParentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        // Initialize Config with the desired flow
-        config = Config(delegate: self, flow: .reels, parentViewController: self)
-        config?.setup()
+        setupISMKit()
     }
+    
+    private func setupISMKit() {
+           let config = ISMConfiguration(apiKey: "your-api-key")
+           
+           ISMKit.shared.delegate = self
+           ISMKit.shared.presentationDelegate = self
+           
+           ISMKit.shared.configure(with: config) { result in
+               // Handle configuration result
+               ISMKit.shared.show(contentType: .reels) { result in
+                   //
+               }
+           }
+       }
 }
 
-extension ParentViewController: ISMConfig {
-    func openProfile() {
-        print("Open Profile from parent")
-        // Implement profile opening logic here
+extension ParentViewController: ISMPresentationDelegate {
+    func present(viewController: UIViewController) {
+        // You control how to present the view controller
+                // For example:
+                addChild(viewController)
+                view.addSubview(viewController.view)
+                viewController.view.frame = view.bounds
+                viewController.didMove(toParent: self)
     }
+    
+    func dismiss() {
+        // Handle dismissal in your preferred way
+             children.forEach { child in
+                 child.willMove(toParent: nil)
+                 child.view.removeFromSuperview()
+                 child.removeFromParent()
+             }
+    }
+    
+  
+}
 
-    func openCoins() {
-        print("Open Coins from parent ")
-        // Implement coins opening logic here
-    }
+extension ParentViewController: ISMDelegate {
+    // MARK: - ISMDelegate methods
+        
+        func didTapProfile() {
+            // Handle profile tap
+            print("Profile tapped parent vc")
+        }
+        
+        func didTapCoins() {
+            // Handle coins tap
+            print("Coin tapped parent vc")
+        }
+        
+        func didEncounterError(_ error: ISMError) {
+            // Handle errors
+        }
 }

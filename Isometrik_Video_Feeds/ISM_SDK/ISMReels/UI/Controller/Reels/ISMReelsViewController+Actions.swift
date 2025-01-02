@@ -11,7 +11,7 @@ extension ISMReelsViewController{
     //MARK: - Actions
     @objc func profileTapped(){
          print("open profile")
-        configDelegate?.openProfile()
+        configDelegate?.didTapProfile()
     }
     
     @objc func followingTapped(){
@@ -43,6 +43,6 @@ extension ISMReelsViewController{
     @objc func coinsButtonTapped(){
       //open coins button
         print("Coin tapped")
-        configDelegate?.openCoins()
+        configDelegate?.didTapCoins()
     }
 }

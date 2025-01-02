@@ -30,7 +30,7 @@ class Config {
             break
         case .reels:
             let reelsVC = ISMReelsViewController()
-            reelsVC.configDelegate = parentVC as? any ISMConfig
+            reelsVC.configDelegate = parentVC as? any ISMDelegate
             add(childVC: reelsVC, to: parentVC)
         case .twitter:
             // Add twitter-specific functionality

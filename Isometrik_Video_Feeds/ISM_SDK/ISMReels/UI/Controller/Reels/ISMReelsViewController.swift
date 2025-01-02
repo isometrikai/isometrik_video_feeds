@@ -44,7 +44,7 @@ class ISMReelsViewController: UIViewController {
     // MARK: - ViewModel
     
     let viewModel = ISMReelsViewModel()
-    var configDelegate : ISMConfig?
+    var configDelegate : ISMDelegate?
     // MARK: - IGListKit Declarations
     
     let dataSource = ISMReelsDataSource()

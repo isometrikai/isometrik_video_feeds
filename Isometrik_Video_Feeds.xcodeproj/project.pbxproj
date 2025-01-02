@@ -47,6 +47,7 @@
 		6BAAAD352D1ACAA6008E698D /* IGListSwiftKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6BAAAD342D1ACAA6008E698D /* IGListSwiftKit */; };
 		6BAAAD422D1C0B06008E698D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6BAAAD412D1C0B06008E698D /* Kingfisher */; };
 		6BAAAD442D1C0DC4008E698D /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAAAD432D1C0DC4008E698D /* KingfisherManager.swift */; };
+		6BD7110C2D269F5900156850 /* ISMConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7110B2D269F5900156850 /* ISMConfiguration.swift */; };
 		6BF0503A2D23DAD3005D5CBD /* ISMReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050342D23DAD3005D5CBD /* ISMReelsViewController.swift */; };
 		6BF0503B2D23DAD3005D5CBD /* ISMReelsViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050352D23DAD3005D5CBD /* ISMReelsViewController+Actions.swift */; };
 		6BF0503C2D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050362D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift */; };
@@ -98,6 +99,7 @@
 		6BAAAD142D1ACA4E008E698D /* FeedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
 		6BAAAD182D1ACA4F008E698D /* CompositionalLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutManager.swift; sourceTree = "<group>"; };
 		6BAAAD432D1C0DC4008E698D /* KingfisherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingfisherManager.swift; sourceTree = "<group>"; };
+		6BD7110B2D269F5900156850 /* ISMConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMConfiguration.swift; sourceTree = "<group>"; };
 		6BF050342D23DAD3005D5CBD /* ISMReelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsViewController.swift; sourceTree = "<group>"; };
 		6BF050352D23DAD3005D5CBD /* ISMReelsViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+Actions.swift"; sourceTree = "<group>"; };
 		6BF050362D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsViewController+CustomFunctions.swift"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		6B28A55B2D22610F008E0C5D /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				6BAAACFC2D1ACA4E008E698D /* Tabbar */,
 				6BAAACE42D1AC9FB008E698D /* AppDelegate.swift */,
 				6BAAACE62D1AC9FB008E698D /* SceneDelegate.swift */,
 				6BAAACE82D1AC9FB008E698D /* ViewController.swift */,
@@ -401,7 +404,6 @@
 				6B28A55A2D22610A008E0C5D /* ISM_SDK */,
 				6B28A55D2D2264E1008E0C5D /* Shared */,
 				6B28A55B2D22610F008E0C5D /* Example */,
-				6BAAACFC2D1ACA4E008E698D /* Tabbar */,
 				6BAAACED2D1AC9FC008E698D /* Assets.xcassets */,
 				6B28A5762D22C52B008E0C5D /* New Folder */,
 				6BAAACF22D1AC9FC008E698D /* Info.plist */,
@@ -484,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				6BF0504F2D240F2B005D5CBD /* ISMConfig.swift */,
+				6BD7110B2D269F5900156850 /* ISMConfiguration.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				6BF0503C2D23DAD3005D5CBD /* ISMReelsViewController+CustomFunctions.swift in Sources */,
 				6BF0503D2D23DAD3005D5CBD /* ISMReelsViewController+NotificationObservers.swift in Sources */,
 				6BF0503E2D23DAD3005D5CBD /* ISMReelsViewController+Routing.swift in Sources */,
+				6BD7110C2D269F5900156850 /* ISMConfiguration.swift in Sources */,
 				6B77A6792D1D5F1E00C0C6EF /* ISMReelsEnums.swift in Sources */,
 				6B77A67A2D1D5F1E00C0C6EF /* ISMReelsBottomView+CustomFunctions.swift in Sources */,
 				6B77A67B2D1D5F1E00C0C6EF /* ISMReelsView+SideBar+Actions.swift in Sources */,
