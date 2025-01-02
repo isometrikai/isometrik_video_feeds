@@ -24,6 +24,7 @@ extension ISMReelsViewController{
     /// Configures the styling of collection view and adds it to the main view
     func configureCollectionView(){
         reelsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        reelsCollectionView.isPagingEnabled = true
         reelsCollectionView.backgroundColor = .sOblack
         view.addSubview(reelsCollectionView)
     }
