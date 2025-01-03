@@ -25,12 +25,20 @@ class ISMReelsBottomView : UIView{
     let followButton = UIButton()
     ///View that holds name and star indicator
     let infoContainerView = UIView()
+    ///Control Stack
+    let controlStackView = UIStackView()
+    ///Forward Button
+    let fastForwardButton = UIButton()
+    /// Rewind Button
+    let rewindButton = UIButton()
+    /// progress bar
+    let progressBar = UIProgressView(progressViewStyle: .default)
     //Caption
     /// Caption of the post posted bu the user on his/her post
     let captionLabel = UILabel()
     
     var data : ISMReels!
-    var delegate : ISMReelsBottomViewDelegate?
+    var delegate : ISMReelsDelegates?
     var isFollowed: Bool = false {
         didSet {
             data.setFollowStatus(isfollow: isFollowed)
@@ -42,7 +50,7 @@ class ISMReelsBottomView : UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpUI()
-        setUpConstraints()
+    
     }
     
     required init?(coder: NSCoder) {

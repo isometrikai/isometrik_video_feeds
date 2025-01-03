@@ -8,7 +8,6 @@
 import UIKit
 
 class ParentViewController: UIViewController {
-    var config: Config?
 
     override func viewDidLoad() {
         super.viewDidLoad()

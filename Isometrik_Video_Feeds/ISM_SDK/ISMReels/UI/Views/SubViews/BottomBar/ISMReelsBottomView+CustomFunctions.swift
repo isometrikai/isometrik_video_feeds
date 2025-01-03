@@ -9,19 +9,24 @@ import Foundation
 import UIKit
 
 extension ISMReelsBottomView {
+    func updateProgress(_ progress: Float) {
+        progressBar.progress = progress
+    }
+}
+
+extension ISMReelsBottomView {
     //MARK: - Custom Functions
     
     /// Configures the components of the view
     func setUpUI(){
         setUpBackgrounView()
-        setUpDescriptionStackView()
-        setUpProfileButton()
-        setUpInfoView()
-        setUpFollowButton()
-        captionView()
+        setUpConstraints()
     }
     /// Sets the styling of the container Stack View
     func setUpBackgrounView(){
+        setUpDescriptionStackView()
+        setUpControlStackView()
+        captionView()
         backgroundStackView.translatesAutoresizingMaskIntoConstraints = false
         backgroundStackView.axis = .vertical
         backgroundStackView.spacing = 10
@@ -39,13 +44,48 @@ extension ISMReelsBottomView {
     }
     /// Sets the styling of Information stack view
     func setUpDescriptionStackView(){
+        setUpProfileButton()
+        setUpInfoView()
+        setUpFollowButton()
         descriptionStackView.translatesAutoresizingMaskIntoConstraints = false
         descriptionStackView.axis = .horizontal
         descriptionStackView.spacing = 5
         descriptionStackView.distribution = .fill
         descriptionStackView.alignment = .center
         backgroundStackView.addArrangedSubview(descriptionStackView)
-        
+    }
+    
+    func setUpControlStackView(){
+        configureRewindButton()
+        configureProgressBar()
+        configureForwardButton()
+        controlStackView.translatesAutoresizingMaskIntoConstraints = false
+        controlStackView.axis = .horizontal
+        controlStackView.spacing = 5
+        controlStackView.distribution = .fill
+        controlStackView.alignment = .center
+        backgroundStackView.addArrangedSubview(controlStackView)
+    }
+    
+    func configureForwardButton(){
+        fastForwardButton.translatesAutoresizingMaskIntoConstraints = false
+        fastForwardButton.setImage(.forward, for: .normal)
+        fastForwardButton.addTarget(self, action: #selector(fastForwardTapped), for: .touchUpInside)
+        controlStackView.addArrangedSubview(fastForwardButton)
+    }
+    
+    func configureRewindButton(){
+        rewindButton.translatesAutoresizingMaskIntoConstraints = false
+        rewindButton.setImage(.rewind, for: .normal)
+        rewindButton.addTarget(self, action: #selector(rewindTapped), for: .touchUpInside)
+        controlStackView.addArrangedSubview(rewindButton)
+    }
+    /// Styles the progress bar
+    func configureProgressBar(){
+        progressBar.translatesAutoresizingMaskIntoConstraints = false
+        progressBar.progressTintColor = .soAppBase
+        progressBar.trackTintColor = .lightGray
+        controlStackView.addArrangedSubview(progressBar)
     }
     /// Sets the styling of the profile Button
     func setUpProfileButton(){
@@ -106,6 +146,10 @@ extension ISMReelsBottomView {
             // Profile Button Constraints
             profileButton.heightAnchor.constraint(equalToConstant: 50),
             profileButton.widthAnchor.constraint(equalToConstant: 50),
+            rewindButton.heightAnchor.constraint(equalToConstant: 50),
+            rewindButton.widthAnchor.constraint(equalToConstant: 50),
+            fastForwardButton.heightAnchor.constraint(equalToConstant: 50),
+            fastForwardButton.widthAnchor.constraint(equalToConstant: 50),
             // Star Indicator Constraints
             starIndicatorImageView.heightAnchor.constraint(equalToConstant: 20),
             starIndicatorImageView.widthAnchor.constraint(equalToConstant: 20),

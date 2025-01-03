@@ -22,4 +22,12 @@ extension ISMReelsBottomView{
         isFollowed.toggle()
         delegate?.didTapFollowButton(isFollowed: isFollowed)
     }
+    @objc func fastForwardTapped(){
+        print("Fast Forward Tapped")
+        delegate?.fastForwardVideo()
+    }
+    @objc func rewindTapped(){
+        print("Rewind Tapped")
+        delegate?.rewindVideo()
+    }
 }

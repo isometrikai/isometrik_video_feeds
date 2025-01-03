@@ -30,6 +30,7 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
     
+    var delegates : ISMReelsDelegates?
     //MARK: - Initialisers and Deinitialisers
     
     override init(frame: CGRect) {
@@ -55,7 +56,6 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
         bottomView.data = data
         bottomView.nameLabel.text = data.name
         bottomView.isFollowed = data.isfollow
-        
         configureMedia(url: data.ImageUrl, mediaType: data.mediaType)
         //set up the remaining UI over the image or video
         configureSocialView()

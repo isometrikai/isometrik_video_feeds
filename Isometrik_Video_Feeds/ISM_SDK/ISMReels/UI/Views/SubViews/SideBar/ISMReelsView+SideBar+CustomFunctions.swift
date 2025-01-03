@@ -82,7 +82,7 @@ extension ISMReelsSideBarSocialView{
         button.setImage(UIImage(resource: imageName), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: selector, for: .touchUpInside)
-        
+    
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = count
         label.font = .systemFont(ofSize: 12)

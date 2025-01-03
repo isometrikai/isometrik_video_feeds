@@ -57,7 +57,6 @@
 		6BF050452D240838005D5CBD /* ISMReelsMoreOptionsViewController+CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050442D240838005D5CBD /* ISMReelsMoreOptionsViewController+CustomViews.swift */; };
 		6BF050472D2408B6005D5CBD /* MoreOptions+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050462D2408B6005D5CBD /* MoreOptions+CollectionView.swift */; };
 		6BF050492D2408FD005D5CBD /* ISMReelsOptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF050482D2408FD005D5CBD /* ISMReelsOptionsCollectionViewCell.swift */; };
-		6BF050512D240F2B005D5CBD /* ISMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0504F2D240F2B005D5CBD /* ISMConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,7 +108,6 @@
 		6BF050442D240838005D5CBD /* ISMReelsMoreOptionsViewController+CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISMReelsMoreOptionsViewController+CustomViews.swift"; sourceTree = "<group>"; };
 		6BF050462D2408B6005D5CBD /* MoreOptions+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoreOptions+CollectionView.swift"; sourceTree = "<group>"; };
 		6BF050482D2408FD005D5CBD /* ISMReelsOptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMReelsOptionsCollectionViewCell.swift; sourceTree = "<group>"; };
-		6BF0504F2D240F2B005D5CBD /* ISMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISMConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -485,7 +483,6 @@
 		6BF050502D240F2B005D5CBD /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				6BF0504F2D240F2B005D5CBD /* ISMConfig.swift */,
 				6BD7110B2D269F5900156850 /* ISMConfiguration.swift */,
 			);
 			path = Config;
@@ -584,7 +581,6 @@
 				6B28A5752D22C08A008E0C5D /* ISMReelsView+BlurView.swift in Sources */,
 				6B28A56F2D22B89B008E0C5D /* ISMReelsSideBarSocialView+Delegates.swift in Sources */,
 				6B77A6762D1D5F1E00C0C6EF /* SocialiseReelsSectionController.swift in Sources */,
-				6BF050512D240F2B005D5CBD /* ISMConfig.swift in Sources */,
 				6B77A6772D1D5F1E00C0C6EF /* UIView.swift in Sources */,
 				6B28A56D2D22B87C008E0C5D /* ISMReelsBottomView+Delegates.swift in Sources */,
 				6B77A6782D1D5F1E00C0C6EF /* ReelsData.swift in Sources */,

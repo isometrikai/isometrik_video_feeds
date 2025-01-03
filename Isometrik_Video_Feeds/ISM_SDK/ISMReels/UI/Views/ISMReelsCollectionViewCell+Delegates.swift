@@ -6,8 +6,36 @@
 //
 
 import Foundation
-
+import AVFoundation
 extension ISMReelsCollectionViewCell : ISMReelsDelegates{
+    func fastForwardVideo() {
+        print("Inside fastForwardVideo")
+        guard let player = player else { return }
+        
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        let fastForwardTime = currentTime + 10 // Fast-forward by 10 seconds
+        
+        // Ensure you don't fast forward past the video duration
+        let duration = CMTimeGetSeconds(player.currentItem?.duration ?? CMTime.zero)
+        let newTime = min(fastForwardTime, duration)
+        
+        let newTimeCM = CMTime(seconds: newTime, preferredTimescale: 600)
+        player.seek(to: newTimeCM)
+    }
+    
+    func rewindVideo() {
+        guard let player = player else { return }
+
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        let rewindTime = currentTime - 10 // Rewind by 10 seconds
+
+        // Ensure you don't rewind before the start of the video
+        let newTime = max(rewindTime, 0) // Ensure the time is not negative
+
+        let newTimeCM = CMTime(seconds: newTime, preferredTimescale: 600)
+        player.seek(to: newTimeCM)
+    }
+    
     func didTapProfileButton() {
         //open other user's profile
     }

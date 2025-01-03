@@ -25,7 +25,6 @@ extension ISMReelsViewController{
     func configureCollectionView(){
         reelsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         reelsCollectionView.isPagingEnabled = true
-        reelsCollectionView.backgroundColor = .sOblack
         view.addSubview(reelsCollectionView)
     }
     /// Configures the styling of profile button that displays the user's profile picture in the header .It also has a target to open profile View Controller

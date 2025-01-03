@@ -87,6 +87,7 @@ extension ISMReelsCollectionViewCell{
     /// Sets the styling of bottom description view on the reels cell
     func configureBottomView() {
         bottomView.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.delegate = self
         reelsImageView.addSubview(bottomView)
     }
     /// Configure the play pause view
@@ -158,6 +159,7 @@ extension ISMReelsCollectionViewCell{
         // Clear media-related components
         reelsImageView.image = nil
         stopVideo()
+        bottomView.updateProgress(0.0)
         player = nil
         playerLayer = nil
     }
@@ -181,10 +183,21 @@ extension ISMReelsCollectionViewCell{
         
         // Add the player layer to the view
         if let playerLayer = playerLayer {
-            playerLayer.frame = CGRect(x: 0, y: 10, width: self.contentView.bounds.width, height: self.contentView.bounds.height) // Ensure the player layer matches the backgroundView's bounds
+            playerLayer.frame = CGRect(x: 0, y: 0, width: self.contentView.bounds.width, height: self.contentView.bounds.height) // Ensure the player layer matches the backgroundView's bounds
             reelsImageView.layer.addSublayer(playerLayer)
         }
         
+        player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.1, preferredTimescale: 600), queue: .main) { [weak self] time in
+            guard let self = self, let player = self.player else { return }
+            let currentTime = CMTimeGetSeconds(player.currentTime())
+            let duration = CMTimeGetSeconds(player.currentItem?.duration ?? CMTime.zero)
+            
+            if duration > 0 {
+                let progress = Float(currentTime / duration)
+                self.bottomView.updateProgress(progress)
+            }
+        }
+
         // Start playing the video
         playVideo()
     }
