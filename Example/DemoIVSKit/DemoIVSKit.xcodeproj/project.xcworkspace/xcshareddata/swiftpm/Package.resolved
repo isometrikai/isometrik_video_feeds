@@ -1,0 +1,24 @@
+{
+  "originHash" : "393d21b59bd775afa9f4aa1aec86aec769effd49c72ab1d9ef82e76c1a4330d0",
+  "pins" : [
+    {
+      "identity" : "iglistkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Instagram/IGListKit.git",
+      "state" : {
+        "revision" : "baf38ea4d438ef3cc6c6deb8615e1910e03f02bb",
+        "version" : "5.0.0"
+      }
+    },
+    {
+      "identity" : "isometrik_video_feeds",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/isometrikai/isometrik_video_feeds.git",
+      "state" : {
+        "branch" : "Master_Reels_SDK",
+        "revision" : "f9c308c205049a9ecd70cb41df0a851e4b63cec7"
+      }
+    }
+  ],
+  "version" : 3
+}
