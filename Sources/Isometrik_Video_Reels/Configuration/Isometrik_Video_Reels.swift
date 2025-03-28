@@ -65,20 +65,20 @@ import UIKit
         // Additional cleanup...
     }
     
-    func stopPlayback() {
+      public func stopPlayback() {
         IVSReelsUtility.postStopVideoPlayback()
     }
-    func startPlayback() {
+      public func startPlayback() {
         IVSReelsUtility.postPlayVideoPlayback()
     }
     
-    func didEnterForeground(viewController : UIViewController) {
+      public func didEnterForeground(viewController : UIViewController) {
         if let reelsVC = viewController as? ISMReelsViewController {
             reelsVC.playMostVisibleCellVideo()
         }
     }
     
-    func updateDataForEditPost(for viewController: UIViewController , newPost : IVSEditProfileData) {
+      public func updateDataForEditPost(for viewController: UIViewController , newPost : IVSEditProfileData) {
         if let reelsVC = viewController as? ISMReelsViewController {
             if let visibleCell = reelsVC.getMostVisibleCell() as? ISMReelsCollectionViewCell {
                 visibleCell.bottomView.data.updateDataForEditPost(post: newPost)
@@ -88,7 +88,7 @@ import UIKit
     }
     
     /// Handle play and pause logic based on the flow
-    func handlePlayback(for viewController: UIViewController) {
+      public func handlePlayback(for viewController: UIViewController) {
         switch contentType {
         case .reels:
             if let reelsVC = viewController.children.first as? ISMReelsViewController {
@@ -109,7 +109,7 @@ import UIKit
         }
     }
     
-    func updateBookmarkStatus(for viewController: UIViewController , isBookmarked : Bool) {
+      public func updateBookmarkStatus(for viewController: UIViewController , isBookmarked : Bool) {
         switch contentType {
         case .reels:
             if let reelsVC = viewController as? ISMReelsViewController {
@@ -125,7 +125,7 @@ import UIKit
     
     
     
-    func handleCommentsCountUpdation(for viewController: UIViewController , newCount : Int) {
+      public func handleCommentsCountUpdation(for viewController: UIViewController , newCount : Int) {
         switch contentType {
         case .reels:
             if let reelsVC = viewController as? ISMReelsViewController {
@@ -140,18 +140,18 @@ import UIKit
         }
     }
     
-    func updateFollowingData() {
+      public func updateFollowingData() {
         NotificationCenter.default.post(name: .updateFollowing, object: nil)
     }
     
-    func updateDeletePostData(for viewController: UIViewController , postId : String) {
+      public func updateDeletePostData(for viewController: UIViewController , postId : String) {
         if let reelsVC = viewController as? ISMReelsViewController {
             reelsVC.deletePost(postId: postId)
         }
     }
     
     
-    func updateUnlockingPostData(for viewController: UIViewController) {
+      public func updateUnlockingPostData(for viewController: UIViewController) {
         if let reelsVC = viewController as? ISMReelsViewController {
             if let visibleCell = reelsVC.getMostVisibleCell() as? ISMReelsCollectionViewCell {
                 visibleCell.blurView.updateBlurViewEffect()
