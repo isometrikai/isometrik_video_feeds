@@ -35,7 +35,7 @@ extension IVSKit {
 public struct IVSTheme {
     public var themeColor: UIColor = UIColor(resource: .soAppBase)
     
-    init(themeColor: UIColor) {
+    public init(themeColor: UIColor) {
         self.themeColor = themeColor
     }
 }

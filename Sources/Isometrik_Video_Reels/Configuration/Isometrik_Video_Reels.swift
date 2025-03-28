@@ -11,7 +11,7 @@ import UIKit
 /// Main entry point for the ISMKit SDK
   public class IVSKit {
     // MARK: - Properties
-  static let shared = IVSKit()
+    public static let shared = IVSKit()
     /// Delegate to handle SDK callbacks
     public weak var delegate: IVSDelegate?
     /// Delegate to handle view controller presentation

@@ -9,42 +9,42 @@
 import Foundation
 
 public struct IVSInterfaceMedia {
-    let postID : String?
-    let userId : String?
-    let imageUrl : String?
-    let thumbnailUrl : String?
-    let isBookmarked : Bool?
-    let username : String?
-    let viewsCount : Int?
-    let mediaType : Int?
-    let captions : String?
-    let imageUrlWidth : String?
-    let allowDownload : Bool?
-    let profilePic : String?
-    let ispurchased : Bool?
-    let musicId : String?
-    var postAmount : Double? = 0.0
-    var susbcriptionAmount : Double? = 0.0
+    public let postID : String?
+    public let userId : String?
+    public let imageUrl : String?
+    public let thumbnailUrl : String?
+    public let isBookmarked : Bool?
+    public let username : String?
+    public let viewsCount : Int?
+    public let mediaType : Int?
+    public let captions : String?
+    public let imageUrlWidth : String?
+    public let allowDownload : Bool?
+    public let profilePic : String?
+    public let ispurchased : Bool?
+    public let musicId : String?
+    public var postAmount : Double? = 0.0
+    public var susbcriptionAmount : Double? = 0.0
     
 }
 
 public struct IVSMediaData : Codable {
-    let _id, artist: String?
-    let audioStatus: Int?
-    let audioStatusText: String?
-    let createdOn, duration: Double?
-    let imageUrl: String?
-    let name: String?
-    let path: String?
-    let sequenceId: Int?
-    let songBackground: String?
-    let isOriginalSound: Bool?
+    public let _id, artist: String?
+    public let audioStatus: Int?
+    public let audioStatusText: String?
+    public let createdOn, duration: Double?
+    public let imageUrl: String?
+    public let name: String?
+    public let path: String?
+    public let sequenceId: Int?
+    public let songBackground: String?
+    public let isOriginalSound: Bool?
 }
 
 public struct IVSEditProfileData {
-    let ispaid : Bool?
-    let caption : String?
-    let postAmount : Double?
-    let allowComments : Bool?
-    let allowDownload : Bool?
+    public let ispaid : Bool?
+    public let caption : String?
+    public let postAmount : Double?
+    public let allowComments : Bool?
+    public let allowDownload : Bool?
 }
