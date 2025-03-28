@@ -47,4 +47,12 @@ public struct IVSEditProfileData {
     public let postAmount : Double?
     public let allowComments : Bool?
     public let allowDownload : Bool?
+    
+    public init(ispaid: Bool?, caption: String?, postAmount: Double?, allowComments: Bool?, allowDownload: Bool?) {
+        self.ispaid = ispaid
+        self.caption = caption
+        self.postAmount = postAmount
+        self.allowComments = allowComments
+        self.allowDownload = allowDownload
+    }
 }

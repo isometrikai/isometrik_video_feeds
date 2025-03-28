@@ -71,7 +71,11 @@ import UIKit
       public func startPlayback() {
         IVSReelsUtility.postPlayVideoPlayback()
     }
-    
+    public func applicationReceiveMemoryWarningAction() {
+        ImageCacheManager.shared.clearCache()
+        CacheManager.shared.clearCachedReels()
+      }
+      
       public func didEnterForeground(viewController : UIViewController) {
         if let reelsVC = viewController as? ISMReelsViewController {
             reelsVC.playMostVisibleCellVideo()
@@ -161,7 +165,10 @@ import UIKit
             }
         }
     }
-    
+      
+      public func updateWalletValue(_ value: String) {
+          IVSKit.shared.configuration?.walletPrice = value
+      }
     
     static func getUserToken() -> String {
         do {
@@ -212,9 +219,7 @@ import UIKit
     static func getWalletValue() -> String? {
         return self.shared.configuration?.walletPrice
     }
-    func updateWalletValue(_ value: String) {
-        IVSKit.shared.configuration?.walletPrice = value
-    }
+
     func getThemeColor() -> UIColor {
         IVSKit.shared.configuration?.theme?.themeColor ?? UIColor(resource: .soAppBase)
     }
