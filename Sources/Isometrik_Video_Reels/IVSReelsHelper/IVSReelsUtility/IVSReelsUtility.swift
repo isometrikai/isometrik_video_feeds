@@ -86,6 +86,16 @@ class IVSReelsUtility {
         NotificationCenter.default.post(name: .openMoreView, object: nil, userInfo: userInfo)
     }
     
+    static func postOpenLocationView( place : String , placeID : String , latitude : Double , longitude : Double) {
+        let userInfo : [String : Any] = [
+            "place" : place,
+            "placeID" : placeID,
+            "latitude" : latitude,
+            "longitude" : longitude
+        ]
+        NotificationCenter.default.post(name: .openLocationView, object: nil, userInfo: userInfo)
+    }
+    
     static func postOpenLockedPost( data : IVSInterfaceMedia) {
         let userInfo : [String : IVSInterfaceMedia] = ["data" : data]
         NotificationCenter.default.post(name: .unlockPost, object: nil, userInfo: userInfo)
@@ -117,6 +127,20 @@ class IVSReelsUtility {
         ]
         
         NotificationCenter.default.post(name: .openMusicView, object: nil , userInfo: userInfo)
+    }
+    
+    static func postOpenHastags(tag : String) {
+        let userInfo : [String : Any] = [
+            "hashtag" : tag
+        ]
+        NotificationCenter.default.post(name: .openHastag, object: nil , userInfo: userInfo)
+    }
+    
+    static func postOpenMention(mentionedUser : String) {
+        let userInfo : [String : Any] = [
+            "mentionedUser" : mentionedUser
+        ]
+        NotificationCenter.default.post(name: .openMentionedUsers, object: nil , userInfo: userInfo)
     }
     
     

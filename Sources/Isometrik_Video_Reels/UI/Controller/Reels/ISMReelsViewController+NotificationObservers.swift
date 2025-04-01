@@ -55,6 +55,9 @@ extension ISMReelsViewController{
             [.updateFollowing : #selector(followingTapped)],
             [.unlockPost : #selector(unlockPostTapped)],
             [.subscribePost : #selector(subscribePostTapped)],
+            [.openMentionedUsers : #selector(openMentionedUsersAction)],
+            [.openHastag : #selector(openHastagAction)],
+            [.openLocationView : #selector(openLocationView)],
             [.logOut : #selector(logOut)]
         ]
         addCustomObservers()

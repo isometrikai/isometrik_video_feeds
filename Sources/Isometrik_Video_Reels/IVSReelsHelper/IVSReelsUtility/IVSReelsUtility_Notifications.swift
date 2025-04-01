@@ -27,5 +27,8 @@ extension NSNotification.Name {
     static let updateFollowing : NSNotification.Name = NSNotification.Name("updateFollowing")
     static let unlockPost : NSNotification.Name = NSNotification.Name("unlockPost")
     static let subscribePost : NSNotification.Name = NSNotification.Name("subscribePost")
+    static let openHastag : NSNotification.Name = NSNotification.Name("openHastag")
+    static let openMentionedUsers : NSNotification.Name = NSNotification.Name("openMentionedUsers")
+    static let openLocationView : NSNotification.Name = NSNotification.Name("openLocationView")
     static let logOut : NSNotification.Name = NSNotification.Name("logOut")
 }

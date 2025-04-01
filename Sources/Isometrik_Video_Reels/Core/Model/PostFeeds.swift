@@ -38,7 +38,7 @@ struct Content: Codable{
     let musicData: MusicData?
     let location: IVSLocation?
     let place: String?
-    let placeID: String?
+    let placeId: String?
 //    let orientation: Int?
     let isStar: Bool?
     let trendingScore: Int?

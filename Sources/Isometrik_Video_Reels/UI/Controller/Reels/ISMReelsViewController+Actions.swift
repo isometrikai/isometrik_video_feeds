@@ -371,6 +371,46 @@ extension ISMReelsViewController{
         }
     }
     
+    @objc func openHastagAction(notification : Notification) {
+        print("open Hastag from Reels")
+        if  IVSKit.getIsGuestUser(){
+            configDelegate?.presentLoginScreen()
+        }else {
+            if let userInfo = notification.userInfo,
+               let hashtag = userInfo["hashtag"] as? String {
+                configDelegate?.didTapHashtag(withTag: hashtag)
+            }
+        }
+    }
+    
+    @objc func openLocationView(notification : Notification) {
+        print("open LocationView from Reels")
+        if  IVSKit.getIsGuestUser(){
+            configDelegate?.presentLoginScreen()
+        }else {
+            if let userInfo = notification.userInfo,
+               let place = userInfo["place"] as? String ,
+               let placeId = userInfo["placeID"] as? String,
+               let latitude = userInfo["latitude"] as? Double,
+               let longitude = userInfo["longitude"] as? Double
+            {
+                configDelegate?.placeTapped(place: place, placeID: placeId, latitude: latitude, longitude: longitude)
+            }
+        }
+    }
+    
+    @objc func openMentionedUsersAction(notification : Notification) {
+        print("open mention from Reels")
+        if  IVSKit.getIsGuestUser(){
+            configDelegate?.presentLoginScreen()
+        }else {
+            if let userInfo = notification.userInfo,
+               let mentionedUser = userInfo["mentionedUser"] as? String {
+                configDelegate?.didTapMentionedUser(user: mentionedUser)
+            }
+        }
+    }
+    
     @objc func logOut() {
         configDelegate?.logOutSDK()
     }

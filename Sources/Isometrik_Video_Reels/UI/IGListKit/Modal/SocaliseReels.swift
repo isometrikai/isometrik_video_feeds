@@ -34,8 +34,13 @@ class ISMReels : ListDiffable , Codable{
     private(set) var profilePic : String?
     private(set) var allowDownload : Bool?
     private(set) var imageUrlWidth : String?
+    private(set) var categoryName : String?
+    private(set) var place : String?
+    private(set) var placeId : String?
+    private(set) var latitude : Double?
+    private(set) var longitude : Double?
     
-    init(name: String , imageUrl : String , mediaType : Int ,date : Int64 ,otherUserProfileImageUrl : String ,caption : String ,isStar : Bool,allowComments : Bool , ispaid : Bool = false , isfollow : Bool , musicData : MusicData? ,subscriptonAmount : Double? ,likesCount : Int , commentsCount : Int , viewsCount : Int,userId : String , isPurchased : Bool , postAmount : Double,postId : String , liked : Bool , isBookMarked : Bool,profilePic : String? , allowDownload : Bool? , imageUrlWidth : String?) {
+    init(name: String , imageUrl : String , mediaType : Int ,date : Int64 ,otherUserProfileImageUrl : String ,caption : String ,isStar : Bool,allowComments : Bool , ispaid : Bool = false , isfollow : Bool , musicData : MusicData? ,subscriptonAmount : Double? ,likesCount : Int , commentsCount : Int , viewsCount : Int,userId : String , isPurchased : Bool , postAmount : Double,postId : String , liked : Bool , isBookMarked : Bool,profilePic : String? , allowDownload : Bool? , imageUrlWidth : String? , categoryName : String? = "" , place : String? = "" ,placeId : String? = "",latitude : Double? = 0,longitude : Double? = 0) {
         self.name = name
         self.imageUrl = imageUrl
         self.mediaType = mediaType
@@ -60,6 +65,11 @@ class ISMReels : ListDiffable , Codable{
         self.profilePic = profilePic
         self.allowDownload = allowDownload
         self.imageUrlWidth = imageUrlWidth
+        self.categoryName = categoryName
+        self.place = place
+        self.placeId = placeId
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
     func setFollowStatus(isfollow : Bool){

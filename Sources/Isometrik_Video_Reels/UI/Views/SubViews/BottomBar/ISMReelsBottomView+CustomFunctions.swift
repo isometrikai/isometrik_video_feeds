@@ -28,6 +28,7 @@ extension ISMReelsBottomView {
         setUpDescriptionStackView()
         setUpControlStackView()
         captionView()
+        configureCategoryButton()
         configureMusicView()
         configureSendTipConatinerView()
         backgroundStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -95,20 +96,55 @@ extension ISMReelsBottomView {
         backgroundStackView.addArrangedSubview(descriptionStackView)
     }
     
-    func configureDateLabel() {
+    func configureDateLabelAndPlaceLabel() {
+        let hstack = UIStackView()
+        hstack.translatesAutoresizingMaskIntoConstraints = false
+        hstack.axis = .horizontal
+        hstack.alignment = .fill
+        hstack.distribution = .fillProportionally
+        hstack.spacing = 8
+        
         dateLabel = UILabel()
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.text = "9 months ago"
         dateLabel.font = .systemFont(ofSize: 15 , weight: .medium)
         dateLabel.textColor = UIColor(resource: .sOwhite)
-        nameAndDateStackView.addArrangedSubview(dateLabel)
+
+        placeButton = UIButton()
+        placeButton.translatesAutoresizingMaskIntoConstraints = false
+        placeButton.setTitle("place", for: .normal)
+        placeButton.setTitleColor(IVSKit.shared.getThemeColor(), for: .normal)
+        placeButton.titleLabel?.font = .systemFont(ofSize: 15 , weight: .medium)
+        placeButton.titleLabel?.textColor = UIColor(resource: .sOwhite)
+        placeButton.addTarget(self, action: #selector(placeTapped), for: .touchUpInside)
+        hstack.addArrangedSubview(placeButton)
+        hstack.addArrangedSubview(dateLabel)
+        
+        nameAndDateStackView.addArrangedSubview(hstack)
+        
+    }
+    
+    func configureCategoryButton() {
+        categoryButton = UIButton()
+        categoryButton.translatesAutoresizingMaskIntoConstraints = false
+        categoryButton.setTitle("Category", for: .normal)
+        categoryButton.setTitleColor(IVSKit.shared.getThemeColor(), for: .normal)
+        categoryButton.titleLabel?.font = .systemFont(ofSize: 15 , weight: .medium)
+        categoryButton.titleLabel?.textColor = UIColor(resource: .sOwhite)
+        categoryButton.contentHorizontalAlignment = .left
+        categoryButton.addTarget(self, action: #selector(categoryTapped), for: .touchUpInside)
+        backgroundStackView.addArrangedSubview(categoryButton)
+        
+        NSLayoutConstraint.activate([
+            categoryButton.widthAnchor.constraint(equalTo: backgroundStackView.widthAnchor, multiplier: 0.3),
+        ])
     }
     
     
     func configureNameAndDateStackView() {
         nameAndDateStackView = UIStackView()
         setUpInfoView()
-        configureDateLabel()
+        configureDateLabelAndPlaceLabel()
         nameAndDateStackView.translatesAutoresizingMaskIntoConstraints = false
         nameAndDateStackView.alignment = .leading
         nameAndDateStackView.axis = .vertical
@@ -271,7 +307,18 @@ extension ISMReelsBottomView {
         captionLabel.text = "Captions are to be kept here "
         captionLabel.textColor = .white
         captionLabel.font = UIFont.systemFont(ofSize: 17)
+        captionLabel.isEditable = false
+        captionLabel.isSelectable = true
+        captionLabel.isScrollEnabled = false
+        captionLabel.dataDetectorTypes = []
+        captionLabel.backgroundColor = .clear
+        captionLabel.textContainerInset = .zero
+        captionLabel.textContainer.lineFragmentPadding = 0
+        
+        
         backgroundStackView.addArrangedSubview(captionLabel)
+        
+        
     }
     
     func addDummyView(){

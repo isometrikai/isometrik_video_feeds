@@ -56,5 +56,8 @@ public protocol IVSDelegate: AnyObject {
     func didTapfollowUserFromFollowing(userId : String , followStatus : Int)
     func didTapUnlockPost(data : IVSInterfaceMedia)
     func didTapSubscribePost(data : IVSInterfaceMedia)
+    func didTapHashtag(withTag : String)
+    func didTapMentionedUser(user : String)
+    func placeTapped(place : String , placeID : String , latitude : Double , longitude : Double)
     func logOutSDK()
 }

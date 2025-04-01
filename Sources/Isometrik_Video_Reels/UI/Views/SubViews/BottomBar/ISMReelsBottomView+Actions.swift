@@ -34,6 +34,23 @@ extension ISMReelsBottomView{
         print("Rewind Tapped")
         delegate?.rewindVideo()
     }
+    @objc func placeTapped(){
+        print("Place Tapped")
+        if IVSKit.getIsGuestUser() {
+            IVSReelsUtility.postOpenLoginScreen()
+        }else {
+            IVSReelsUtility.postOpenLocationView(place: data.place ?? "", placeID: data.placeId ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0)
+        }
+    }
+    
+    @objc func categoryTapped(){
+        print("Category Tapped")
+        if IVSKit.getIsGuestUser() {
+            IVSReelsUtility.postOpenLoginScreen()
+        }else {
+            print("Open Category View")
+        }
+    }
     
     @objc func musicButtonTapped() {
        print("Music Button TAPPED")

@@ -96,7 +96,12 @@ class ISMReelsViewModel{
                                                        isBookMarked : values.isBookMarked ?? false,
                                                        profilePic : values.profilepic ?? "",
                                                        allowDownload : values.allowDownload ?? false,
-                                                       imageUrlWidth : values.imageUrl1Width ?? "0"
+                                                       imageUrlWidth : values.imageUrl1Width ?? "0",
+                                                       categoryName : values.categoryName ?? "",
+                                                       place : values.place ?? "",
+                                                       placeId : values.placeId ?? "",
+                                                       latitude : values.location?.latitude ?? 0,
+                                                       longitude : values.location?.longitude ?? 0
                                                     
                                                       ))
                         
@@ -151,7 +156,12 @@ class ISMReelsViewModel{
                                               isBookMarked : values.isBookMarked ?? false,
                                               profilePic : values.profilepic ?? "",
                                               allowDownload : values.allowDownload ?? false,
-                                              imageUrlWidth : values.imageUrl1Width ?? "0"
+                                              imageUrlWidth : values.imageUrl1Width ?? "0",
+                                              categoryName : values.categoryName ?? "",
+                                              place : values.place ?? "",
+                                              placeId : values.placeId ?? "",
+                                              latitude : values.location?.latitude ?? 0,
+                                              longitude : values.location?.longitude ?? 0
                                              ))
                         
                     }
@@ -216,7 +226,12 @@ class ISMReelsViewModel{
                                                   isBookMarked : values.isBookMarked ?? false,
                                                   profilePic : values.profilepic ?? "",
                                                   allowDownload : values.allowDownload ?? false,
-                                                  imageUrlWidth : values.imageUrl1Width ?? "0"
+                                                  imageUrlWidth : values.imageUrl1Width ?? "0",
+                                                  categoryName : values.categoryName ?? "",
+                                                  place : values.place ?? "",
+                                                  placeId : values.placeId ?? "",
+                                                  latitude : values.location?.latitude ?? 0,
+                                                  longitude : values.location?.longitude ?? 0
                                                  ))
                         
                     }
