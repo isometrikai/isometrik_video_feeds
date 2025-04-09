@@ -166,8 +166,15 @@ import UIKit
         }
     }
       
-      public func updateWalletValue(_ value: String) {
+      public func updateWalletValue(for viewController: UIViewController , value: String) {
           IVSKit.shared.configuration?.walletPrice = value
+          if let reelsVC = viewController as? ISMReelsViewController {
+              if let visibleCell = reelsVC.getMostVisibleCell() as? ISMReelsCollectionViewCell {
+                  DispatchQueue.main.async {
+                      reelsVC.coinsLabel.text = value
+                  }
+              }
+          }
       }
     
     static func getUserToken() -> String {
