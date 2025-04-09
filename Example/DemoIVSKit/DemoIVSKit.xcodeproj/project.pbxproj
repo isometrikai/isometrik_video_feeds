@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B4B63C12D96CE21004F88FA /* Isometrik_Video_Reels in Frameworks */ = {isa = PBXBuildFile; productRef = 6B4B63C02D96CE21004F88FA /* Isometrik_Video_Reels */; };
+		6B60B9652DA6C47F00B932DD /* Isometrik_Video_Reels in Frameworks */ = {isa = PBXBuildFile; productRef = 6B60B9642DA6C47F00B932DD /* Isometrik_Video_Reels */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B4B63C12D96CE21004F88FA /* Isometrik_Video_Reels in Frameworks */,
+				6B60B9652DA6C47F00B932DD /* Isometrik_Video_Reels in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = DemoIVSKit;
 			packageProductDependencies = (
-				6B4B63C02D96CE21004F88FA /* Isometrik_Video_Reels */,
+				6B60B9642DA6C47F00B932DD /* Isometrik_Video_Reels */,
 			);
 			productName = DemoIVSKit;
 			productReference = 6B4B63972D96CDAF004F88FA /* DemoIVSKit.app */;
@@ -114,7 +114,7 @@
 			mainGroup = 6B4B638E2D96CDAF004F88FA;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				6B4B63BF2D96CE21004F88FA /* XCRemoteSwiftPackageReference "isometrik_video_feeds" */,
+				6B60B9632DA6C47F00B932DD /* XCRemoteSwiftPackageReference "isometrik_video_feeds" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6B4B63982D96CDAF004F88FA /* Products */;
@@ -344,7 +344,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6B4B63BF2D96CE21004F88FA /* XCRemoteSwiftPackageReference "isometrik_video_feeds" */ = {
+		6B60B9632DA6C47F00B932DD /* XCRemoteSwiftPackageReference "isometrik_video_feeds" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/isometrikai/isometrik_video_feeds.git";
 			requirement = {
@@ -355,9 +355,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6B4B63C02D96CE21004F88FA /* Isometrik_Video_Reels */ = {
+		6B60B9642DA6C47F00B932DD /* Isometrik_Video_Reels */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B4B63BF2D96CE21004F88FA /* XCRemoteSwiftPackageReference "isometrik_video_feeds" */;
+			package = 6B60B9632DA6C47F00B932DD /* XCRemoteSwiftPackageReference "isometrik_video_feeds" */;
 			productName = Isometrik_Video_Reels;
 		};
 /* End XCSwiftPackageProductDependency section */

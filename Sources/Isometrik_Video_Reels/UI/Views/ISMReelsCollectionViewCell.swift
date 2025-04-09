@@ -31,7 +31,7 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
     
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
-    
+    var data : ISMReels?
     var delegates : ISMReelsDelegates?
     //MARK: - Initialisers and Deinitialisers
     
@@ -55,6 +55,7 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
     
    //MARK: - Setting up Cell
     func setUpCell(data : ISMReels){
+        self.data = data
         setCellForBottomView(data: data)
         setCellForSocialView(data: data)
         configureMedia(url: data.imageUrl, mediaType: data.mediaType)

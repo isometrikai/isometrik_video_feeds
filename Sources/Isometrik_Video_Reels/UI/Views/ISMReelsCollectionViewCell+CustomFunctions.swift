@@ -250,6 +250,14 @@ extension ISMReelsCollectionViewCell{
             }else{
                 player?.play()
             }
+        case .exclusive :
+            //if the post is not purchased the don't play
+            if data?.isPurchased ?? false {
+                player?.play()
+            }else {
+                stopVideo()
+            }
+            
         default :
             player?.play()
         }

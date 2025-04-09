@@ -191,15 +191,16 @@ class ISMReelsBlurView : UIView {
             //lock image
             subscriptionImageView.heightAnchor.constraint(equalToConstant: 60),
             subscriptionImageView.widthAnchor.constraint(equalToConstant: 60),
+           
             //header label
-            subscriptionLabel.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5),
+            subscriptionLabel.widthAnchor.constraint(equalTo: self.subscriptionStackView.widthAnchor),
+          
             //stack View
             subscriptionStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            subscriptionStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            
-            //subscription view
-            subscriptionButtonAndImageView.heightAnchor.constraint(equalToConstant: 45),
-
+            subscriptionStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
+            subscriptionStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70),
+           
+            subscriptionButtonAndImageView.heightAnchor.constraint(equalToConstant: 40),
             subscriptionAmountLabel.centerXAnchor.constraint(equalTo: subscriptionButtonAndImageView.centerXAnchor),
             subscriptionAmountLabel.centerYAnchor.constraint(equalTo: subscriptionButtonAndImageView.centerYAnchor),
             
@@ -214,7 +215,7 @@ class ISMReelsBlurView : UIView {
             subscriptionButton.trailingAnchor.constraint(equalTo: subscriptionButtonAndImageView.trailingAnchor),
             
             //unlock view
-            unlockButtonAndImageView.heightAnchor.constraint(equalToConstant: 45),
+            unlockButtonAndImageView.heightAnchor.constraint(equalToConstant: 40),
             
             unlockLabel.centerXAnchor.constraint(equalTo: unlockButtonAndImageView.centerXAnchor),
             unlockLabel.centerYAnchor.constraint(equalTo: unlockButtonAndImageView.centerYAnchor),
