@@ -107,14 +107,14 @@ extension ISMReelsBottomView {
         dateLabel = UILabel()
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.text = "9 months ago"
-        dateLabel.font = .systemFont(ofSize: 15 , weight: .medium)
+        dateLabel.font = .systemFont(ofSize: 12 , weight: .regular)
         dateLabel.textColor = UIColor(resource: .sOwhite)
 
         placeButton = UIButton()
         placeButton.translatesAutoresizingMaskIntoConstraints = false
         placeButton.setTitle("place", for: .normal)
         placeButton.setTitleColor(IVSKit.shared.getThemeColor(), for: .normal)
-        placeButton.titleLabel?.font = .systemFont(ofSize: 15 , weight: .medium)
+        placeButton.titleLabel?.font = .systemFont(ofSize: 12 , weight: .regular)
         placeButton.titleLabel?.textColor = UIColor(resource: .sOwhite)
         placeButton.addTarget(self, action: #selector(placeTapped), for: .touchUpInside)
         hstack.addArrangedSubview(placeButton)
@@ -129,7 +129,7 @@ extension ISMReelsBottomView {
         categoryButton.translatesAutoresizingMaskIntoConstraints = false
         categoryButton.setTitle("Category", for: .normal)
         categoryButton.setTitleColor(IVSKit.shared.getThemeColor(), for: .normal)
-        categoryButton.titleLabel?.font = .systemFont(ofSize: 15 , weight: .medium)
+        categoryButton.titleLabel?.font = .systemFont(ofSize: 12 , weight: .regular)
         categoryButton.titleLabel?.textColor = UIColor(resource: .sOwhite)
         categoryButton.contentHorizontalAlignment = .left
         categoryButton.addTarget(self, action: #selector(categoryTapped), for: .touchUpInside)
@@ -287,6 +287,7 @@ extension ISMReelsBottomView {
         starIndicatorImageView.translatesAutoresizingMaskIntoConstraints = false
         starIndicatorImageView.image = UIImage(resource: .iconStar)
         starIndicatorImageView.contentMode = .scaleAspectFit
+        starIndicatorImageView.isHidden = true
         infoContainerView.addArrangedSubview(starIndicatorImageView)
     }
     /// Sets the styling of the follow button

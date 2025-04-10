@@ -72,6 +72,7 @@ class ISMReelsBottomView : UIView, UITextViewDelegate{
         captionLabel.isHidden = data.caption.isEmpty
         placeButton.isHidden = data.place?.isEmpty ?? true
         
+        starIndicatorImageView.isHidden = !data.isStar
         categoryButton.setTitle(data.categoryName, for: .normal)
         placeButton.setTitle(data.place ?? "", for: .normal)
         self.dateLabel.text = "\(IVSReelsUtility.timeAgo(from: data.date))"
