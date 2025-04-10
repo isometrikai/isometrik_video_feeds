@@ -248,18 +248,26 @@ extension ISMReelsCollectionViewCell{
             if IVSReelsUtility.showPopularUsers {
                 stopVideo()
             }else{
-                player?.play()
+                if data?.isPurchased ?? false || data?.postAmount == 0 {
+                    player?.play()
+                }else {
+                    stopVideo()
+                }
             }
         case .exclusive :
-            //if the post is not purchased the don't play
-            if data?.isPurchased ?? false {
+            //if the post is not purchased or if its not free then don't play
+            if data?.isPurchased ?? false || data?.postAmount == 0 {
                 player?.play()
             }else {
                 stopVideo()
             }
             
         default :
-            player?.play()
+            if data?.isPurchased ?? false || data?.postAmount == 0 {
+                player?.play()
+            }else {
+                stopVideo()
+            }
         }
         
     }
