@@ -113,7 +113,7 @@ extension ISMReelsBottomView {
         placeButton = UIButton()
         placeButton.translatesAutoresizingMaskIntoConstraints = false
         placeButton.setTitle("place", for: .normal)
-        placeButton.setTitleColor(IVSKit.shared.getThemeColor(), for: .normal)
+        placeButton.setTitleColor(UIColor(resource: .sOwhite), for: .normal)
         placeButton.titleLabel?.font = .systemFont(ofSize: 12 , weight: .regular)
         placeButton.titleLabel?.textColor = UIColor(resource: .sOwhite)
         placeButton.addTarget(self, action: #selector(placeTapped), for: .touchUpInside)
@@ -128,7 +128,7 @@ extension ISMReelsBottomView {
         categoryButton = UIButton()
         categoryButton.translatesAutoresizingMaskIntoConstraints = false
         categoryButton.setTitle("Category", for: .normal)
-        categoryButton.setTitleColor(IVSKit.shared.getThemeColor(), for: .normal)
+        categoryButton.setTitleColor(UIColor(resource: .sOwhite), for: .normal)
         categoryButton.titleLabel?.font = .systemFont(ofSize: 12 , weight: .regular)
         categoryButton.titleLabel?.textColor = UIColor(resource: .sOwhite)
         categoryButton.contentHorizontalAlignment = .left

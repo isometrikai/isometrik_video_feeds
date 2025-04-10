@@ -117,7 +117,7 @@ class ISMReelsBottomView : UIView, UITextViewDelegate{
         
         // Set custom link color
         captionLabel.linkTextAttributes = [
-            .foregroundColor: IVSKit.shared.getThemeColor(),
+            .foregroundColor: UIColor(resource: .sOwhite),
         ]
     }
     
