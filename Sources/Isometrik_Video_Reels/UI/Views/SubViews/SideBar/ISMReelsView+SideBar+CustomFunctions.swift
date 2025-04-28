@@ -44,8 +44,13 @@ extension ISMReelsSideBarSocialView{
     func setupLikesButtonAndLikesCount(){
         likesButton.translatesAutoresizingMaskIntoConstraints = false
         likesCount.translatesAutoresizingMaskIntoConstraints = false
-        setupsButtonAndCount(button: likesButton, countButton: likesCount, imageName: .unLike, selector: #selector(likeTapped),countButtonSelector: #selector(likecountTapped),count: "0")
+        setupsButtonAndCount(button: likesButton, countButton: likesCount, imageName: .unLike, selector: #selector(likeButtonTapped),countButtonSelector: #selector(likecountTapped),count: "0")
     }
+    
+    @objc func likeButtonTapped() {
+        likeTapped(isFromDoubleTap: false)
+    }
+
     /// Styles the views Button And Views label
     func setupViewsButtonAndViewsCount(){
         viewsButton.translatesAutoresizingMaskIntoConstraints = false
