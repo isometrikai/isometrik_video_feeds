@@ -348,7 +348,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/isometrikai/isometrik_video_feeds.git";
 			requirement = {
-				branch = Master_Reels_SDK;
+				branch = Fix/Reels_SDK_bugFixes_28April;
 				kind = branch;
 			};
 		};

@@ -38,53 +38,63 @@ extension ISMReelsSideBarSocialView{
     }
     
     /// Action performed when like Button is tapped
-    @objc func likeTapped(){
-       
+    @objc func likeTapped(isFromDoubleTap: Bool = false) {
         if !IVSKit.getIsGuestUser() {
             if data.isPurchased || !data.isPaid {
-                isLiked.toggle()
-                print( isLiked ? "like Tapped" : "Unlike Tapped")
-                likesButton.setImage(isLiked ? UIImage(resource: .ivslike) : UIImage(resource: .unLike), for:  .normal)
-                
-                var value = (isLiked ? data.likesCount + 1 : data.likesCount - 1)
-                
-                likesCount.setTitle("\(value)", for: .normal)
-                if value < 0 {
-                    value = 0
-                    likesCount.setTitle("0", for: .normal)
-                }
-                
-                
-                print("--------------------------------------")
-                print("data.likesCount : \(data.likesCount)")
-                print("Is liked : \(isLiked ?? false) , value : \(value) ")
-                print("--------------------------------------")
-                
-                
-                let request = IVSAPIRequest(endPoint: isLiked ? IVSReelsEndpoints.likeUser : IVSReelsEndpoints.unlikeUser, requestBody: SocialContent(userId: IVSKit.getUserId(), postId: data.postId ))
-                
-                IVSAPIManager.sendRequest(request: request) {[weak self] (result : IVSResult<SocialResult,IVSReelsAPIError>)  in
-                    guard let self = self else {return}
-                    switch result {
-                    case .success(let data , _):
-                        print(data)
-                        DispatchQueue.main.async {
-                            self.data.updateLikesCount(isliked: self.isLiked, likesCount: value)
-                        }
-                    case .failure(let error):
-                        print(error)
+                if isFromDoubleTap {
+                    // Double tap flow - Only like, don't unlike
+                    if !(isLiked ?? false) {
+                        isLiked = true
+                        updateLikeUIAndAPI()
                     }
+                } else {
+                    // Single tap flow - Toggle like/unlike
+                    isLiked.toggle()
+                    updateLikeUIAndAPI()
                 }
-            }else {
+            } else {
                 print("Post needs to be unlocked first to enable custom action")
-                DispatchQueue.main.async {[weak self] in
+                DispatchQueue.main.async { [weak self] in
                     self?.showAlert()
                 }
             }
-        }else {
+        } else {
             IVSReelsUtility.postOpenLoginScreen()
         }
     }
+
+    private func updateLikeUIAndAPI() {
+        print( isLiked ? "like Tapped" : "Unlike Tapped")
+        likesButton.setImage(isLiked ? UIImage(resource: .ivslike) : UIImage(resource: .unLike), for: .normal)
+
+        var value = (isLiked ? data.likesCount + 1 : data.likesCount - 1)
+        if value < 0 { value = 0 }
+        likesCount.setTitle("\(value)", for: .normal)
+
+        print("--------------------------------------")
+        print("data.likesCount : \(data.likesCount)")
+        print("Is liked : \(isLiked ?? false) , value : \(value) ")
+        print("--------------------------------------")
+
+        let endpoint = isLiked ? IVSReelsEndpoints.likeUser : IVSReelsEndpoints.unlikeUser
+        let request = IVSAPIRequest(endPoint: endpoint, requestBody: SocialContent(userId: IVSKit.getUserId(), postId: data.postId))
+
+        IVSAPIManager.sendRequest(request: request) { [weak self] (result: IVSResult<SocialResult, IVSReelsAPIError>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data, _):
+                print(data)
+                DispatchQueue.main.async {
+                    self.data.updateLikesCount(isliked: self.isLiked, likesCount: value)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    
+    
     
     /// Action performed when liews Button is tapped
     @objc func viewsTapped(){

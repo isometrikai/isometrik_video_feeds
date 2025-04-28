@@ -10,7 +10,7 @@ import AVFoundation
 extension ISMReelsCollectionViewCell : ISMReelsDelegates{
     func reelsViewDoubleTapped() {
         //Double tapping reels view
-        self.socialView.likeTapped()
+        self.socialView.likeTapped(isFromDoubleTap: true)
         self.postLikeView.showImageWithBounceEffect()
     }
     

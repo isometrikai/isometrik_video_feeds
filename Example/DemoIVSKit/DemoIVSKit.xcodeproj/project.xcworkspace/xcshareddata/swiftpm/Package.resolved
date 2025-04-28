@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/isometrikai/isometrik_video_feeds.git",
       "state" : {
-        "branch" : "Master_Reels_SDK",
-        "revision" : "2c1583be6464ffec8ea3b82d9f9f1ce4841b0450"
+        "branch" : "Fix/Reels_SDK_bugFixes_28April",
+        "revision" : "57c4f966a04e5c362e2c318d7f7b5e03af14b3f6"
       }
     }
   ],

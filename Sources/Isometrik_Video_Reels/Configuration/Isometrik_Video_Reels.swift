@@ -16,6 +16,8 @@ import UIKit
     public weak var delegate: IVSDelegate?
     /// Delegate to handle view controller presentation
     public weak var presentationDelegate: IVSPresentationDelegate?
+      
+    public var currentContentViewController: UIViewController?
     
     //MARK: - Internal Declarations
     internal var configuration: IVSFeedsConfiguration?
@@ -56,6 +58,7 @@ import UIKit
             viewController = createTwitterViewController()
         }
         
+        self.currentContentViewController = viewController 
         presentationDelegate.present(viewController: viewController)
         completion(.success(()))
     }
