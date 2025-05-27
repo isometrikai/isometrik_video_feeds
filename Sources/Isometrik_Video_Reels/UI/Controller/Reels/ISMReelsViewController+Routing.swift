@@ -21,9 +21,6 @@ extension ISMReelsViewController {
             followingStackView.isHidden = true
             findPeopleButton.isHidden = true
             findPeopleButtonStackView.isHidden = true
-            trendingButtonUnderlineView.isHidden = false
-            followingButtonUnderlineView.isHidden = true
-            exclusiveButtonUnderlineView.isHidden = true
             self.adapter.performUpdates(animated: false)
             self.refreshControl.endRefreshing()
         } failure: { error in
@@ -38,9 +35,6 @@ extension ISMReelsViewController {
             followingStackView.isHidden = true
             findPeopleButton.isHidden = true
             findPeopleButtonStackView.isHidden = true
-            trendingButtonUnderlineView.isHidden = true
-            followingButtonUnderlineView.isHidden = true
-            exclusiveButtonUnderlineView.isHidden = false
             self.adapter.performUpdates(animated: false)
         } failure: { error in
             print(error)
@@ -60,10 +54,6 @@ extension ISMReelsViewController {
             followingStackView.isHidden = true
             findPeopleButton.isHidden = true
             findPeopleButtonStackView.isHidden = true
-            
-            trendingButtonUnderlineView.isHidden = true
-            followingButtonUnderlineView.isHidden = false
-            exclusiveButtonUnderlineView.isHidden = true
  
         }, failure: {[weak self] error in
             guard let self = self else { return }
@@ -86,9 +76,6 @@ extension ISMReelsViewController {
             self.refreshControl.endRefreshing()
             self.adapter.performUpdates(animated: false)
             
-            trendingButtonUnderlineView.isHidden = true
-            followingButtonUnderlineView.isHidden = false
-            exclusiveButtonUnderlineView.isHidden = true
             
             followingStackView.isHidden = false
             findPeopleButton.isHidden = false

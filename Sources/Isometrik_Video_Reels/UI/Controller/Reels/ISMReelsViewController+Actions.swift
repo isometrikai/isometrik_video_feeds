@@ -98,12 +98,24 @@ extension ISMReelsViewController{
             print("open following")
             
             //hit following
+            trendingButtonUnderlineView.isHidden = true
+            followingButtonUnderlineView.isHidden = false
+            exclusiveButtonUnderlineView.isHidden = true
             self.fetchHomeData()
         }else {
             //delegate to present login screen
             configDelegate?.presentLoginScreen()
         }
 
+    }
+    
+    @objc func updateFollowingsData(){
+        self.viewModel.homeOffset = 0
+        self.viewModel.homeReels.removeAll()
+        print("open following")
+        
+        //hit following
+        self.fetchHomeData()
     }
     
     @objc func trendingTapped(){
@@ -113,6 +125,9 @@ extension ISMReelsViewController{
         IVSReelsUtility.postStopVideoPlayback()
         IVSReelsUtility.selectedReelsCategory = .trending
         self.viewModel.reels.removeAll()
+        trendingButtonUnderlineView.isHidden = false
+        followingButtonUnderlineView.isHidden = true
+        exclusiveButtonUnderlineView.isHidden = true
         self.fetchData()
     }
     
@@ -123,6 +138,9 @@ extension ISMReelsViewController{
             self.viewModel.exclusiveReels.removeAll()
             IVSReelsUtility.postStopVideoPlayback()
             IVSReelsUtility.selectedReelsCategory = .exclusive
+            trendingButtonUnderlineView.isHidden = true
+            followingButtonUnderlineView.isHidden = true
+            exclusiveButtonUnderlineView.isHidden = false
             self.fetchExclusiveData()
         }else {
             configDelegate?.presentLoginScreen()

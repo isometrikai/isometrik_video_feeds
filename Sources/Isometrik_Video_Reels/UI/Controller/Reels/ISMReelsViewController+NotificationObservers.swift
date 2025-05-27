@@ -52,7 +52,7 @@ extension ISMReelsViewController{
             [.followAndUnfollowUser : #selector(followAndUnfollowUser)],
             [.followAndUnfollowUserFromFollowingView : #selector(followAndUnfollowUserFromFollowing)],
             [.openProfileViewFromFollowingView : #selector(openProfileFromFollowing)],
-            [.updateFollowing : #selector(followingTapped)],
+            [.updateFollowing : #selector(updateFollowingsData)],
             [.unlockPost : #selector(unlockPostTapped)],
             [.subscribePost : #selector(subscribePostTapped)],
             [.openMentionedUsers : #selector(openMentionedUsersAction)],
