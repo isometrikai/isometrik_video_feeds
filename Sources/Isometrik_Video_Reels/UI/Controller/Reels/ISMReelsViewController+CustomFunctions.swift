@@ -169,6 +169,7 @@ extension ISMReelsViewController{
         headerView.addSubview(leftStackView)
         headerView.addSubview(holderStack)
         headerView.addSubview(coinsView)
+        view.addSubview(topShade)
         view.addSubview(headerView)
     }
     /// configures the styling  of coins view
@@ -318,6 +319,13 @@ extension ISMReelsViewController{
             popularUserStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             popularUserStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             popularUserStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            // Constraints for bottom shade
+            topShade.topAnchor.constraint(equalTo: popularUserStackView.topAnchor),
+            topShade.leadingAnchor.constraint(equalTo: popularUserStackView.leadingAnchor),
+            topShade.trailingAnchor.constraint(equalTo: popularUserStackView.trailingAnchor),
+            topShade.heightAnchor.constraint(equalToConstant: 100),
+            
             //header View
             headerView.leadingAnchor.constraint(equalTo: popularUserStackView.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: popularUserStackView.trailingAnchor),

@@ -39,6 +39,13 @@ class ISMReelsViewController: UIViewController {
     var followingImageView : UIImageView!
     var findPeopleButton : UIButton!
     var findPeopleButtonStackView : UIStackView!
+    
+    var topShade: UIImageView = {
+        let imageview = UIImageView()
+        imageview.image = UIImage(named: "TopShade")
+        imageview.translatesAutoresizingMaskIntoConstraints = false
+        return imageview
+    }()
   
     var observersMap:[ [NSNotification.Name: Selector] ] = []
     //Collection View

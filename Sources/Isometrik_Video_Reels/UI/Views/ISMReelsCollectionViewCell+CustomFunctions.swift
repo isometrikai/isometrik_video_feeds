@@ -77,6 +77,7 @@ extension ISMReelsCollectionViewCell{
         reelsImageView.isUserInteractionEnabled = true
         addReelsImageViewDoubleTapGesture()
         reelsBackgroundView.addSubview(reelsImageView)
+
     }
     
     func addReelsImageViewDoubleTapGesture() {
@@ -100,6 +101,7 @@ extension ISMReelsCollectionViewCell{
     func configureBottomView() {
         bottomView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.delegate = self
+        reelsImageView.addSubview(bottomShade)
         reelsImageView.addSubview(bottomView)
     }
     /// Configure the play pause view
@@ -149,6 +151,11 @@ extension ISMReelsCollectionViewCell{
             bottomView.bottomAnchor.constraint(equalTo: reelsImageView.bottomAnchor),
             bottomView.leadingAnchor.constraint(equalTo: reelsImageView.leadingAnchor),
             
+            bottomShade.bottomAnchor.constraint(equalTo: reelsImageView.bottomAnchor),
+            bottomShade.leadingAnchor.constraint(equalTo: reelsImageView.leadingAnchor),
+            bottomShade.trailingAnchor.constraint(equalTo: reelsImageView.trailingAnchor),
+            bottomShade.heightAnchor.constraint(equalToConstant: 144),
+            
             // Center the playPauseButton in the reelsImageView
             playPauseView.leadingAnchor.constraint(equalTo: reelsImageView.leadingAnchor),
             playPauseView.trailingAnchor.constraint(equalTo: socialView.leadingAnchor),
@@ -160,6 +167,7 @@ extension ISMReelsCollectionViewCell{
             postLikeView.centerXAnchor.constraint(equalTo: reelsImageView.centerXAnchor),
             postLikeView.widthAnchor.constraint(equalToConstant: 200),
             postLikeView.heightAnchor.constraint(equalToConstant: 200),
+            
             
             
         ])

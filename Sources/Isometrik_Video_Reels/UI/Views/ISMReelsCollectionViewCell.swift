@@ -15,6 +15,14 @@ class ISMReelsCollectionViewCell: UICollectionViewCell {
     
     /// container view of the reels cell
     var reelsBackgroundView: UIView!
+    
+    var bottomShade: UIImageView = {
+        let imageview = UIImageView()
+        imageview.image = UIImage(named: "bottomShade")
+        imageview.translatesAutoresizingMaskIntoConstraints = false
+        return imageview
+    }()
+    
     /// imageView of the reels cell
     var reelsImageView: UIImageView!
     
