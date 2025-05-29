@@ -38,6 +38,16 @@ class ISMReelsSideBarSocialView : UIView{
     var isLiked : Bool!
     var delegate : ISMReelsSideBarSocialDelegates?
     var data : ISMReels!
+    
+    /// Add a property to track pending requests
+    var isPendingLikeRequest = false
+    
+    /// Add a property to store the original count when the view loads
+    var originalLikesCount: Int = 0
+    
+    /// Store the original state when the view first loads
+    var originalLikeState: Bool = false
+  
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -48,6 +58,8 @@ class ISMReelsSideBarSocialView : UIView{
     
     func setupCell(data : ISMReels) {
         self.data = data
+        originalLikesCount = data.likesCount // Remember original like count
+        originalLikeState = isLiked ?? false  // Remember original like status
         likesCount.setTitle("\(data.likesCount)", for: .normal)
         commentsCount.setTitle("\(data.commentsCount)", for: .normal)
         viewsCount.setTitle("\(data.viewsCount)", for: .normal)

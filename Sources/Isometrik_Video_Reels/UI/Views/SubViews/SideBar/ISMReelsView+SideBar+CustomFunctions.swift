@@ -48,6 +48,7 @@ extension ISMReelsSideBarSocialView{
     }
     
     @objc func likeButtonTapped() {
+        likesButton.isUserInteractionEnabled = false
         likeTapped(isFromDoubleTap: false)
     }
 

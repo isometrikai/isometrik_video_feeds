@@ -45,10 +45,19 @@ extension ISMReelsSideBarSocialView{
                     // Double tap flow - Only like, don't unlike
                     if !(isLiked ?? false) {
                         isLiked = true
+                        likesButton.isUserInteractionEnabled = true
                         updateLikeUIAndAPI()
                     }
                 } else {
-                    // Single tap flow - Toggle like/unlike
+                    // Single tap flow - Toggle like/unlike only if no pending request
+                    guard !isPendingLikeRequest else {
+                        // Re-enable button if request is already in progress
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.likesButton.isUserInteractionEnabled = true
+                        }
+                        return
+                    }
+                    
                     isLiked.toggle()
                     updateLikeUIAndAPI()
                 }
@@ -63,37 +72,81 @@ extension ISMReelsSideBarSocialView{
         }
     }
 
-    private func updateLikeUIAndAPI() {
-        print( isLiked ? "like Tapped" : "Unlike Tapped")
-        likesButton.setImage(isLiked ? UIImage(resource: .ivslike) : UIImage(resource: .unLike), for: .normal)
-
-        var value = (isLiked ? data.likesCount + 1 : data.likesCount - 1)
-        if value < 0 { value = 0 }
-        likesCount.setTitle("\(value)", for: .normal)
-
-        print("--------------------------------------")
-        print("data.likesCount : \(data.likesCount)")
-        print("Is liked : \(isLiked ?? false) , value : \(value) ")
-        print("--------------------------------------")
-
+    @objc private func updateLikeUIAndAPI() {
+        // Prevent multiple simultaneous requests
+        guard !isPendingLikeRequest else { return }
+        isPendingLikeRequest = true
+        
+        // Store current state for potential rollback
+        let currentLikeState = !isLiked // The state before toggle
+        let currentCount = data.likesCount
+        
+        // Determine the valid range based on original state
+        let minCount: Int
+        let maxCount: Int
+        
+        if originalLikeState {
+            // Originally liked: can go from originalCount-1 (unlike) to originalCount (like)
+            minCount = originalLikesCount - 1
+            maxCount = originalLikesCount
+        } else {
+            // Originally not liked: can go from originalCount (unlike) to originalCount+1 (like)
+            minCount = originalLikesCount
+            maxCount = originalLikesCount + 1
+        }
+        
+        // Calculate the new count based on current action
+        let newCount: Int
+        if isLiked {
+            // User just liked the post
+            newCount = min(currentCount + 1, maxCount)
+        } else {
+            // User just unliked the post
+            newCount = max(currentCount - 1, minCount)
+        }
+        
+        // Update UI immediately (optimistic update)
+        updateLikeCountUI(isLiked: isLiked, count: newCount)
+        
         let endpoint = isLiked ? IVSReelsEndpoints.likeUser : IVSReelsEndpoints.unlikeUser
         let request = IVSAPIRequest(endPoint: endpoint, requestBody: SocialContent(userId: IVSKit.getUserId(), postId: data.postId))
 
         IVSAPIManager.sendRequest(request: request) { [weak self] (result: IVSResult<SocialResult, IVSReelsAPIError>) in
             guard let self = self else { return }
+            
+            // Reset pending flag
+            self.isPendingLikeRequest = false
+            
             switch result {
-            case .success(let data, _):
-                print(data)
+            case .success(let responseData, _):
+                print("Like API Success: \(responseData)")
                 DispatchQueue.main.async {
-                    self.data.updateLikesCount(isliked: self.isLiked, likesCount: value)
+                    self.likesButton.isUserInteractionEnabled = true
+                    // Success - keep the optimistic update
                 }
             case .failure(let error):
-                print(error)
+                print("Like API Error: \(error)")
+                DispatchQueue.main.async {
+                    // Revert everything on failure
+                    self.isLiked = currentLikeState
+                    self.updateLikeCountUI(isLiked: self.isLiked, count: currentCount)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.likesButton.isUserInteractionEnabled = true
+                }
             }
         }
     }
 
-    
+    private func updateLikeCountUI(isLiked: Bool, count: Int){
+        // Update UI elements
+        self.likesCount.setTitle("\(count)", for: .normal)
+        self.likesButton.setImage(self.isLiked ? UIImage(resource: .ivslike) : UIImage(resource: .unLike), for: .normal)
+        
+        // Update data model with the new count
+        self.data.updateLikesCount(isliked: self.isLiked, likesCount: count)
+    }
     
     
     /// Action performed when liews Button is tapped
