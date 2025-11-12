@@ -64,6 +64,9 @@ extension ISMReelsFollowingCollectionViewCell {
     func configureView() {
         containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.backgroundColor = .white
+        containerView.layer.cornerRadius = 8.5
+        containerView.layer.masksToBounds = true
         self.contentView.addSubview(containerView)
         
         configureProfileButton()
@@ -77,7 +80,7 @@ extension ISMReelsFollowingCollectionViewCell {
         profileButton.translatesAutoresizingMaskIntoConstraints = false
         profileButton.setImage(UIImage(resource: .iconProfile), for: .normal) // Placeholder image
         profileButton.imageView?.contentMode = .scaleAspectFit
-        profileButton.layer.cornerRadius = 40
+        profileButton.layer.cornerRadius = 32
         profileButton.clipsToBounds = true
         profileButton.layer.masksToBounds = true
         profileButton.addTarget(self, action: #selector(openProfilePage), for: .touchUpInside)
@@ -87,18 +90,18 @@ extension ISMReelsFollowingCollectionViewCell {
     func configureUsernameLabel() {
         usernameLabel = UILabel()
         usernameLabel.translatesAutoresizingMaskIntoConstraints = false
-        usernameLabel.textColor = UIColor(resource: .sOwhite)
+        usernameLabel.textColor = UIColor(resource: .sOblack)
         usernameLabel.text = "navpreetkaur123"
         usernameLabel.textAlignment = .center
-        usernameLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        usernameLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         containerView.addSubview(usernameLabel)
     }
     
     func configureNameLabel() {
         nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.textColor = UIColor(resource: .sOwhite)
-        nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        nameLabel.textColor = UIColor(resource: .sOblack)
+        nameLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         nameLabel.text = "Navpreet Kaur"
         nameLabel.textAlignment = .center
         containerView.addSubview(nameLabel)
@@ -116,7 +119,7 @@ extension ISMReelsFollowingCollectionViewCell {
         popularUserfollowButton.translatesAutoresizingMaskIntoConstraints = false
         popularUserfollowButton.setTitle("Nav", for: .normal)
         popularUserfollowButton.backgroundColor = IVSKit.shared.getThemeColor()
-        popularUserfollowButton.layer.cornerRadius = 10
+        popularUserfollowButton.layer.cornerRadius = 8
         popularUserfollowButton.setTitleColor(UIColor(resource: .sOwhite), for: .normal)
         popularUserfollowButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         popularUserfollowButton.addTarget(self, action: #selector(followButtonAction), for: .touchUpInside)
@@ -131,24 +134,27 @@ extension ISMReelsFollowingCollectionViewCell {
             self.containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             self.containerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             
-            self.profileButton.topAnchor.constraint(equalTo: containerView.topAnchor , constant: 10),
-            self.profileButton.centerXAnchor.constraint(equalTo: popularUserfollowButtonStackView.centerXAnchor),
-            self.profileButton.widthAnchor.constraint(equalToConstant: 80),
-            self.profileButton.heightAnchor.constraint(equalToConstant: 80),
+            self.profileButton.topAnchor.constraint(equalTo: containerView.topAnchor , constant: 20),
+            self.profileButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            self.profileButton.widthAnchor.constraint(equalToConstant: 65),
+            self.profileButton.heightAnchor.constraint(equalToConstant: 65),
             
             usernameLabel.topAnchor.constraint(equalTo: profileButton.bottomAnchor , constant: 10),
             usernameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor , constant: 20),
             usernameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 20),
+            usernameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             usernameLabel.heightAnchor.constraint(equalToConstant: 20),
             
             nameLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor , constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
             nameLabel.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor),
+            nameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             nameLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            popularUserfollowButtonStackView.topAnchor.constraint(equalTo: nameLabel.topAnchor , constant: 10),
+            popularUserfollowButtonStackView.topAnchor.constraint(equalTo: nameLabel.topAnchor , constant: 22),
             popularUserfollowButtonStackView.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
             popularUserfollowButtonStackView.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor),
+            popularUserfollowButtonStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             popularUserfollowButtonStackView.heightAnchor.constraint(equalToConstant: 50),
         ])
     }

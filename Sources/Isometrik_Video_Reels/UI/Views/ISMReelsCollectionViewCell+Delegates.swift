@@ -10,8 +10,12 @@ import AVFoundation
 extension ISMReelsCollectionViewCell : ISMReelsDelegates{
     func reelsViewDoubleTapped() {
         //Double tapping reels view
-        self.socialView.likeTapped(isFromDoubleTap: true)
-        self.postLikeView.showImageWithBounceEffect()
+        if !IVSKit.getIsGuestUser() {
+            self.socialView.likeTapped(isFromDoubleTap: true)
+            self.postLikeView.showImageWithBounceEffect()
+        }else {
+            IVSReelsUtility.postOpenLoginScreen()
+        }
     }
     
     func openProfilePage() {
