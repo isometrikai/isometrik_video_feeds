@@ -112,10 +112,13 @@ extension ISMReelsViewController{
     @objc func updateFollowingsData(){
         self.viewModel.homeOffset = 0
         self.viewModel.homeReels.removeAll()
-        print("open following")
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {[weak self] in
+            guard let self else {return}
+            self.followingTapped()
+            print("open following")
+        }
         //hit following
-        self.fetchHomeData()
+//        self.fetchHomeData()
     }
     
     @objc func trendingTapped(){
