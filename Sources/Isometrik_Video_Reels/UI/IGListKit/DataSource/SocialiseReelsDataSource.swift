@@ -106,6 +106,7 @@ class ISMReelsDataSource: NSObject,ListAdapterDataSource{
                 reel.postId == postid
             }
         }
+        CacheManager.shared.clearCachedReels()
     }
     
 }

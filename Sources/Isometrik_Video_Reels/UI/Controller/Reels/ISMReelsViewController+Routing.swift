@@ -11,6 +11,7 @@ extension ISMReelsViewController {
     // MARK: - Setup Methods
     
     func fetchData() {
+        CacheManager.shared.clearCachedReels()
         self.dataSource.cachedReels = CacheManager.shared.loadCachedReels()
         self.reelsCollectionView.isHidden = false
         self.adapter.performUpdates(animated: false)
