@@ -25,6 +25,10 @@ extension ISMReelsViewController {
             self.adapter.performUpdates(animated: false)
             self.refreshControl.endRefreshing()
         } failure: { error in
+            DispatchQueue.main.async {
+                self.dataSource.updateFeeds(reels: [])
+                self.adapter.performUpdates(animated: false)
+            }
             print(error)
         }
     }
@@ -38,6 +42,10 @@ extension ISMReelsViewController {
             findPeopleButtonStackView.isHidden = true
             self.adapter.performUpdates(animated: false)
         } failure: { error in
+            DispatchQueue.main.async {
+                self.dataSource.updateExclusiveFeeds(reels: [])
+                self.adapter.performUpdates(animated: false)
+            }
             print(error)
         }
     }

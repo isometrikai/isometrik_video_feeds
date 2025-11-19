@@ -41,7 +41,7 @@ class ISMReelsDataSource: NSObject,ListAdapterDataSource{
         case .trending:
             return reels.isEmpty ? cachedReels : reels
         case .exclusive:
-            return exclusiveReels.isEmpty ? cachedReels : exclusiveReels
+            return exclusiveReels.isEmpty ? [] : exclusiveReels
         }
     }
     
@@ -68,19 +68,25 @@ class ISMReelsDataSource: NSObject,ListAdapterDataSource{
     }
     
     func updateFeeds(reels : [ISMReels]){
-        self.reels = reels
-//        print(reels)
-        CacheManager.shared.clearCachedReels()  // Clear old cache
-        CacheManager.shared.saveCachedReels(reels) // Save new reels
+        DispatchQueue.main.async {
+            self.reels = reels
+    //        print(reels)
+            CacheManager.shared.clearCachedReels()  // Clear old cache
+            CacheManager.shared.saveCachedReels(reels) // Save new reels
+        }
     }
     func updateExclusiveFeeds(reels : [ISMReels]){
-        self.exclusiveReels = reels
-//        print(reels)
+        DispatchQueue.main.async {
+            self.exclusiveReels = reels
+            //        print(reels)
+        }
     }
     
     func updateHomeFeeds(reels : [ISMReels]){
-        self.homeFeeds = reels
-//        print(reels)
+        DispatchQueue.main.async {
+            self.homeFeeds = reels
+            //        print(reels)
+        }
     }
     
     
