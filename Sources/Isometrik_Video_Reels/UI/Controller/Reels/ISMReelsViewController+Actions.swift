@@ -111,6 +111,7 @@ extension ISMReelsViewController{
     
     @objc func updateFollowingsData(){
         self.viewModel.homeOffset = 0
+        self.viewModel.homeIsFetchMore = true
         self.viewModel.homeReels.removeAll()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {[weak self] in
             guard let self else {return}
@@ -119,6 +120,16 @@ extension ISMReelsViewController{
         }
         //hit following
 //        self.fetchHomeData()
+    }
+    
+    @objc func updateTrendingData(){
+        self.viewModel.offset = 0
+        self.viewModel.isFetchMore = true
+        self.viewModel.reels.removeAll()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {[weak self] in
+            guard let self else {return}
+            self.trendingTapped()
+        }
     }
     
     @objc func trendingTapped(){

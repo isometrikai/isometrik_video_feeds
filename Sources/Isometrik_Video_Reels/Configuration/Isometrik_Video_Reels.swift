@@ -151,6 +151,11 @@ import UIKit
         NotificationCenter.default.post(name: .updateFollowing, object: nil)
     }
     
+      public func updateTrendingData() {
+          NotificationCenter.default.post(name: .updateTrending, object: nil)
+    }
+    
+      
       public func updateDeletePostData(for viewController: UIViewController , postId : String) {
         if let reelsVC = viewController as? ISMReelsViewController {
             reelsVC.deletePost(postId: postId)
