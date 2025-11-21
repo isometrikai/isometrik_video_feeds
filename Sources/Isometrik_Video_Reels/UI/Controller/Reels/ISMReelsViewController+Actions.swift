@@ -123,11 +123,11 @@ extension ISMReelsViewController{
     }
     
     @objc func updateTrendingData(){
-        self.viewModel.offset = 0
-        self.viewModel.isFetchMore = true
-        self.viewModel.reels.removeAll()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {[weak self] in
+        IVSLoaderView.show()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {[weak self] in
             guard let self else {return}
+            self.dataSource.cachedReels.removeAll()
+            self.dataSource.updateFeeds(reels: [])
             self.trendingTapped()
         }
     }
@@ -136,9 +136,11 @@ extension ISMReelsViewController{
         print("open trending")
         IVSLoaderView.show()
         self.viewModel.offset = 0
+        self.viewModel.isFetchMore = true
         IVSReelsUtility.postStopVideoPlayback()
         IVSReelsUtility.selectedReelsCategory = .trending
         self.viewModel.reels.removeAll()
+        CacheManager.shared.clearCachedReels()
         trendingButtonUnderlineView.isHidden = false
         followingButtonUnderlineView.isHidden = true
         exclusiveButtonUnderlineView.isHidden = true
