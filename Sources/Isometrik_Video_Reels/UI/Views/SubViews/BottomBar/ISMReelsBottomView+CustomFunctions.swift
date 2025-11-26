@@ -311,15 +311,12 @@ extension ISMReelsBottomView {
         captionLabel.isEditable = false
         captionLabel.isSelectable = true
         captionLabel.isScrollEnabled = false
-        captionLabel.dataDetectorTypes = []
+        captionLabel.dataDetectorTypes = [.all]
         captionLabel.backgroundColor = .clear
         captionLabel.textContainerInset = .zero
         captionLabel.textContainer.lineFragmentPadding = 0
         
-        
         backgroundStackView.addArrangedSubview(captionLabel)
-        
-        
     }
     
     func addDummyView(){
