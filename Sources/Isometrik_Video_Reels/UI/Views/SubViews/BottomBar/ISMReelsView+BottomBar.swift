@@ -101,55 +101,88 @@ class ISMReelsBottomView : UIView, UITextViewDelegate{
       
     }
     
-    func setUpCaptions(captext : String) {
+    func setUpCaptions(captext: String) {
         let text = captext
-        let attributedString = NSMutableAttributedString(string: text, attributes: [
-            .font: UIFont.systemFont(ofSize: 15, weight: .semibold),
-            .foregroundColor: UIColor(resource: .sOwhite)
-        ])
-        
-        // Define patterns for hashtags and mentions
+        let attributedString = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                .font: UIFont.systemFont(ofSize: 15, weight: .semibold),
+                .foregroundColor: UIColor(resource: .sOwhite)
+            ]
+        )
+
+        // Patterns
         let hashtagPattern = "#\\w+"
         let mentionPattern = "@\\w+"
-        
-        // Apply both patterns
-        applyPattern(pattern: hashtagPattern, in: text, attributedString: attributedString, prefix: "hashtag://")
-        applyPattern(pattern: mentionPattern, in: text, attributedString: attributedString, prefix: "mention://")
-        
+        let urlPattern = "(https?:\\/\\/[^\\s]+)"
+
+        // Apply ALL patterns with ONE function
+        applyPattern(pattern: hashtagPattern,
+                     in: text,
+                     attributedString: attributedString,
+                     prefix: "hashtag://")
+
+        applyPattern(pattern: mentionPattern,
+                     in: text,
+                     attributedString: attributedString,
+                     prefix: "mention://")
+
+        applyPattern(pattern: urlPattern,
+                     in: text,
+                     attributedString: attributedString,
+                     prefix: "link://")
+
         captionLabel.attributedText = attributedString
         captionLabel.delegate = self
-        
-        // Set custom link color
+
         captionLabel.linkTextAttributes = [
-            .foregroundColor: UIColor(resource: .sOwhite),
+            .foregroundColor: UIColor(resource: .sOwhite)
         ]
     }
+
     
-    func applyPattern(pattern: String, in text: String, attributedString: NSMutableAttributedString, prefix: String) {
-          let regex = try! NSRegularExpression(pattern: pattern, options: [])
-          let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
-          
-          for match in matches {
-              let range = match.range
-              let nsText = text as NSString
-              let keyword = nsText.substring(with: range)
-              
-              attributedString.addAttribute(.link, value: "\(prefix)\(keyword)", range: range)
-              attributedString.addAttribute(.foregroundColor, value: UIColor(resource: .sOwhite), range: range)
-          }
-      }
-     
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-        let urlString = URL.absoluteString
-        if urlString.hasPrefix("hashtag://") {
-            let hashtag = urlString.replacingOccurrences(of: "hashtag://", with: "")
-            openHashtagView(hashtag: hashtag)
-        } else if urlString.hasPrefix("mention://") {
-            let username = urlString.replacingOccurrences(of: "mention://", with: "")
-            openProfileView(username: username)
+    func applyPattern(pattern: String,
+                      in text: String,
+                      attributedString: NSMutableAttributedString,
+                      prefix: String) {
+
+        let regex = try? NSRegularExpression(pattern: pattern, options: [])
+        let matches = regex?.matches(in: text, options: [], range: NSRange(location: 0, length: text.count))
+
+        matches?.forEach { match in
+            let matchRange = match.range
+            let matchedText = (text as NSString).substring(with: matchRange)
+
+            let urlString = prefix + matchedText
+            attributedString.addAttribute(.link, value: urlString, range: matchRange)
         }
-        
+    }
+     
+    func textView(_ textView: UITextView,
+                  shouldInteractWith URL: URL,
+                  in characterRange: NSRange,
+                  interaction: UITextItemInteraction) -> Bool {
+
+        let urlString = URL.absoluteString
+
+        switch true {
+        case urlString.hasPrefix("hashtag://"):
+            openHashtagView(hashtag: urlString.replacingOccurrences(of: "hashtag://", with: ""))
+        case urlString.hasPrefix("mention://"):
+            openProfileView(username: urlString.replacingOccurrences(of: "mention://", with: ""))
+        case urlString.hasPrefix("link://"):
+            let actualURL = urlString.replacingOccurrences(of: "link://", with: "")
+            openWebLink(actualURL)
+        default:
+            break
+        }
+
         return false
+    }
+    
+    func openWebLink(_ urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        UIApplication.shared.open(url)
     }
     
     func openHashtagView(hashtag: String) {
