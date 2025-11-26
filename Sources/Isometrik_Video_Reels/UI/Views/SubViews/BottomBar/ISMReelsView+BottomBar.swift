@@ -71,7 +71,11 @@ class ISMReelsBottomView : UIView, UITextViewDelegate{
         categoryButton.isHidden = data.categoryName?.isEmpty ?? true
         captionLabel.isHidden = data.caption.isEmpty
         placeButton.isHidden = data.place?.isEmpty ?? true
-        
+        if data.userId != IVSKit.getUserId() {
+            followButton.isHidden = false
+        } else {
+            followButton.isHidden = true
+        }
         starIndicatorImageView.isHidden = !data.isStar
         categoryButton.setTitle(data.categoryName, for: .normal)
         placeButton.setTitle(data.place ?? "", for: .normal)
