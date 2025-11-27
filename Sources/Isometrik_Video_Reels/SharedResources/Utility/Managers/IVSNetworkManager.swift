@@ -53,7 +53,7 @@ struct IVSAPIRequest<R> {
 struct IVSAPIManager {
     static func sendRequest<T: Codable, R: Any>(request: IVSAPIRequest<R>, showLoader: Bool = true, completion: @escaping (_ result: IVSResult<T, IVSReelsAPIError>) -> Void) {
         if showLoader {
-            DispatchQueue.main.async { /*IVSLoaderView.show() */}
+            DispatchQueue.main.async { IVSLoaderView.show() }
         }
         
         var urlComponents = URLComponents(url: request.endPoint.baseURL.appendingPathComponent(request.endPoint.path), resolvingAgainstBaseURL: true)
@@ -61,6 +61,7 @@ struct IVSAPIManager {
         
         guard let url = urlComponents?.url else {
             completion(.failure(.invalidResponse))
+            DispatchQueue.main.async { IVSLoaderView.hide() }
             return
         }
         
@@ -83,7 +84,7 @@ struct IVSAPIManager {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(.invalidResponse))
-                DispatchQueue.main.async { IVSLoaderView.show() }
+                DispatchQueue.main.async { IVSLoaderView.hide()}
                 return
             }
             
