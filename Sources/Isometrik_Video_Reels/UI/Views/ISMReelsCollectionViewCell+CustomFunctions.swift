@@ -215,6 +215,12 @@ extension ISMReelsCollectionViewCell{
         // Remove any existing player layer from the view
         cleanMedia()
         
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Audio session error:", error)
+        }
         // Initialize the AVPlayer with the video URL
         player = AVPlayer(url: videoURL)
         // Initialize the AVPlayerLayer and set its properties
