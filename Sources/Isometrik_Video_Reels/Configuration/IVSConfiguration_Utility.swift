@@ -56,8 +56,9 @@ public struct IVSFeedsConfiguration {
     public let username : String
     public let likeApi : String?
     public let unlikeApi : String?
+    public let countForAds : Int?
     
-    public init(isGuestUser : Bool,bearerToken: String, walletPrice : String,userId : String,username : String,baseUrl: String? = nil,trendingApi: String? = nil, popularApi: String? = nil,followingApi: String? = nil,exclusiveApi: String? = nil,guestApi: String? = nil,environment: IVSEnvironment = .production,theme: IVSTheme? = nil,likeApi : String? = nil , unlikeApi : String? = nil) {
+    public init(isGuestUser : Bool,bearerToken: String, walletPrice : String,userId : String,username : String,baseUrl: String? = nil,trendingApi: String? = nil, popularApi: String? = nil,followingApi: String? = nil,exclusiveApi: String? = nil,guestApi: String? = nil,environment: IVSEnvironment = .production,theme: IVSTheme? = nil,likeApi : String? = nil , unlikeApi : String? = nil, countforAds : Int? = nil) {
         self.bearerToken = bearerToken
         self.walletPrice = walletPrice
         self.baseUrl = baseUrl
@@ -73,6 +74,7 @@ public struct IVSFeedsConfiguration {
         self.username = username
         self.likeApi = likeApi
         self.unlikeApi = unlikeApi
+        self.countForAds = countforAds
         
     }
 }

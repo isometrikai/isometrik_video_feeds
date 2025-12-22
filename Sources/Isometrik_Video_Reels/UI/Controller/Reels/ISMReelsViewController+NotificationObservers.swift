@@ -60,7 +60,7 @@ extension ISMReelsViewController{
             [.openHastag : #selector(openHastagAction)],
             [.openLocationView : #selector(openLocationView)],
             [.logOut : #selector(logOut)],
-            [.presentAds: #selector(presentAdsAfter6Reels)]
+            [.presentAds: #selector(presentAdsInReels)]
             
         ]
         addCustomObservers()

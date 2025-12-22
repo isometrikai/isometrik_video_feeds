@@ -120,13 +120,11 @@ class ISMReelsDataSource: NSObject,ListAdapterDataSource{
 extension ISMReelsDataSource : ListDisplayDelegate{
     func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {
         
-        
-        
         switch sectionController {
             case is ISMReelsSectionController:
             let sectionIndex = listAdapter.section(for: sectionController)
             
-            if (sectionIndex != 0 && sectionIndex % 5 == 0) {
+            if let count = IVSKit.shared.configuration?.countForAds, count > 0, (sectionIndex != 0 && sectionIndex % count == 0) {
                 IVSReelsUtility.postPresentAds()
             }
             
