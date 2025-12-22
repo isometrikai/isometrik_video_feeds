@@ -60,4 +60,5 @@ public protocol IVSDelegate: AnyObject {
     func didTapMentionedUser(user : String)
     func placeTapped(place : String , placeID : String , latitude : Double , longitude : Double)
     func logOutSDK()
+    func presentAds()
 }

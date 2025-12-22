@@ -456,4 +456,8 @@ extension ISMReelsViewController{
         }
     }
     
+    @objc func presentAdsAfter6Reels() {
+        configDelegate?.presentAds()
+    }
+    
 }

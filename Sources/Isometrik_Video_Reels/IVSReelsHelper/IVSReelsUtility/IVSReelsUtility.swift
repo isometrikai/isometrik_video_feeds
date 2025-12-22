@@ -106,11 +106,9 @@ class IVSReelsUtility {
         NotificationCenter.default.post(name: .subscribePost, object: nil, userInfo: userInfo)
     }
     
-    
     static func reloadData() {
         NotificationCenter.default.post(name: .reloadData , object: nil)
     }
-    
     
     static func followAndUnfollowUser(isfollowed : Bool ,userID : String) {
             let userInfo: [String: Any] = [
@@ -157,6 +155,10 @@ class IVSReelsUtility {
                "postID" : postID
            ]
         NotificationCenter.default.post(name: .openViewersView , object: nil , userInfo: userInfo)
+    }
+    
+    static func postPresentAds() {
+        NotificationCenter.default.post(name: .presentAds , object: nil)
     }
     
     static func setImageFromUrl(mediaUrl: String, imageView: UIImageView) {

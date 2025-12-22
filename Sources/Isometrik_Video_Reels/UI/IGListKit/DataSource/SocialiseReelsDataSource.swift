@@ -120,9 +120,16 @@ class ISMReelsDataSource: NSObject,ListAdapterDataSource{
 extension ISMReelsDataSource : ListDisplayDelegate{
     func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {
         
+        
+        
         switch sectionController {
             case is ISMReelsSectionController:
             let sectionIndex = listAdapter.section(for: sectionController)
+            
+            if (sectionIndex % 6 == 0) {
+                IVSReelsUtility.postPresentAds()
+            }
+            
             switch IVSReelsUtility.selectedReelsCategory {
             case .following:
                 if !IVSReelsUtility.showPopularUsers {
