@@ -11,26 +11,26 @@ extension ISMReelsViewController {
     // MARK: - Setup Methods
     
     func fetchData() {
-        CacheManager.shared.clearCachedReels()
-        self.dataSource.cachedReels = CacheManager.shared.loadCachedReels()
-        self.reelsCollectionView.isHidden = false
-        self.adapter.performUpdates(animated: false)
-        
-        viewModel.fetchReelsContent(offset: viewModel.offset) { [weak self] in
-            guard let self = self else { return }
-            self.dataSource.updateFeeds(reels: self.viewModel.reels)
-            followingStackView.isHidden = true
-            findPeopleButton.isHidden = true
-            findPeopleButtonStackView.isHidden = true
-            self.adapter.performUpdates(animated: false)
-            self.refreshControl.endRefreshing()
-        } failure: { error in
-            DispatchQueue.main.async {
-                self.dataSource.updateFeeds(reels: [])
-                self.adapter.performUpdates(animated: false)
-            }
-            print(error)
-        }
+//        CacheManager.shared.clearCachedReels()
+//        self.dataSource.cachedReels = CacheManager.shared.loadCachedReels()
+//        self.reelsCollectionView.isHidden = false
+//        self.adapter.performUpdates(animated: false)
+//        
+//        viewModel.fetchReelsContent(offset: viewModel.offset) { [weak self] in
+//            guard let self = self else { return }
+//            self.dataSource.updateFeeds(reels: self.viewModel.reels)
+//            followingStackView.isHidden = true
+//            findPeopleButton.isHidden = true
+//            findPeopleButtonStackView.isHidden = true
+//            self.adapter.performUpdates(animated: false)
+//            self.refreshControl.endRefreshing()
+//        } failure: { error in
+//            DispatchQueue.main.async {
+//                self.dataSource.updateFeeds(reels: [])
+//                self.adapter.performUpdates(animated: false)
+//            }
+//            print(error)
+//        }
     }
     func fetchExclusiveData() {
         viewModel.fetchExclusiveContent(offset: viewModel.exclusiveOffset) { [weak self] in
