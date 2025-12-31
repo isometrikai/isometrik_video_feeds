@@ -123,6 +123,11 @@ extension ISMReelsDataSource : ListDisplayDelegate{
         switch sectionController {
             case is ISMReelsSectionController:
             let sectionIndex = listAdapter.section(for: sectionController)
+            
+            if let adsAllowed = IVSKit.shared.configuration?.adsAllowed, adsAllowed, let count = IVSKit.shared.configuration?.countForAds, count > 0, (sectionIndex != 0 && sectionIndex % count == 0) {
+                IVSReelsUtility.postPresentAds()
+            }
+            
             switch IVSReelsUtility.selectedReelsCategory {
             case .following:
                 if !IVSReelsUtility.showPopularUsers {

@@ -32,4 +32,5 @@ extension NSNotification.Name {
     static let openMentionedUsers : NSNotification.Name = NSNotification.Name("openMentionedUsers")
     static let openLocationView : NSNotification.Name = NSNotification.Name("openLocationView")
     static let logOut : NSNotification.Name = NSNotification.Name("logOut")
+    static let presentAds: NSNotification.Name = NSNotification.Name("presentAds")
 }
