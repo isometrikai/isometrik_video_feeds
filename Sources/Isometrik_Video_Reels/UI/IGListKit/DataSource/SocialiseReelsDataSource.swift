@@ -124,7 +124,7 @@ extension ISMReelsDataSource : ListDisplayDelegate{
             case is ISMReelsSectionController:
             let sectionIndex = listAdapter.section(for: sectionController)
             
-            if let count = IVSKit.shared.configuration?.countForAds, count > 0, (sectionIndex != 0 && sectionIndex % count == 0) {
+            if let adsAllowed = IVSKit.shared.configuration?.adsAllowed, adsAllowed, let count = IVSKit.shared.configuration?.countForAds, count > 0, (sectionIndex != 0 && sectionIndex % count == 0) {
                 IVSReelsUtility.postPresentAds()
             }
             
